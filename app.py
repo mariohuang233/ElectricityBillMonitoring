@@ -159,6 +159,18 @@ def index():
     
     return send_file('monitor.html')
 
+@app.route('/chart.min.js')
+def get_chart_js():
+    """提供Chart.js库文件"""
+    return send_file('chart.min.js', mimetype='application/javascript')
+
+@app.route('/<path:filename>')
+def static_files(filename):
+    """提供静态文件"""
+    if filename in ['index.html', 'monitor.html', 'style.css', 'script.js', 'chart.min.js']:
+        return send_file(filename)
+    return "File not found", 404
+
 @app.route('/api/meter-data')
 def get_meter_data():
     """获取电表数据API"""
