@@ -150,6 +150,13 @@ function getChartData(type = 'hourly') {
 
 // 初始化图表
 function initCharts() {
+    // 检查Chart.js是否正确加载
+    if (typeof Chart === 'undefined') {
+        console.error('Chart.js未正确加载');
+        return;
+    }
+    console.log('Chart.js版本:', Chart.version);
+    
     // 初始化用电趋势图
     const ctx = document.getElementById('usageChart').getContext('2d');
     const hourlyData = getChartData('hourly');

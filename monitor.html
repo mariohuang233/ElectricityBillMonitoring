@@ -876,6 +876,21 @@
         let dailyData = [];
         let monthlyData = [];
 
+        // 显示错误信息
+        function showError(message) {
+            const errorDiv = document.getElementById('errorDiv');
+            const errorMessage = document.getElementById('errorMessage');
+            if (errorDiv && errorMessage) {
+                errorMessage.textContent = message;
+                errorDiv.style.display = 'block';
+                document.getElementById('loadingDiv').style.display = 'none';
+                document.getElementById('dataDiv').style.display = 'none';
+            } else {
+                console.error('错误显示元素未找到:', message);
+                alert('错误: ' + message);
+            }
+        }
+
         // 确保Chart.js加载完成后再初始化
         function waitForChart() {
             if (typeof Chart !== 'undefined') {
@@ -932,6 +947,15 @@
 
         // 初始化图表
         function initCharts() {
+            try {
+                // 检查Chart.js是否正确加载
+                if (typeof Chart === 'undefined') {
+                    console.error('Chart.js未正确加载');
+                    showError('图表库加载失败，请刷新页面重试');
+                    return;
+                }
+                console.log('Chart.js版本:', Chart.version);
+            
             // 温馨的颜色配置
             const warmColors = {
                 primary: '#ff6b6b',
@@ -1128,6 +1152,32 @@
                     }
                 }
             });
+            } catch (error) {
+                console.error('图表初始化失败:', error);
+                showError('图表初始化失败: ' + error.message);
+            }
+        }
+
+        // 带重试机制的fetch函数
+        async function fetchWithRetry(url, maxRetries = 3, delay = 1000) {
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(url, {
+                        timeout: 10000,
+                        headers: {
+                            'Cache-Control': 'no-cache'
+                        }
+                    });
+                    if (response.ok) {
+                        return await response.json();
+                    }
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                } catch (error) {
+                    console.warn(`尝试 ${i + 1}/${maxRetries} 获取 ${url} 失败:`, error.message);
+                    if (i === maxRetries - 1) throw error;
+                    await new Promise(resolve => setTimeout(resolve, delay * (i + 1)));
+                }
+            }
         }
 
         // 获取电表数据
@@ -1147,25 +1197,58 @@
             statusIndicator.style.backgroundColor = '#FF8A65';
 
             try {
-                 // 并行获取所有数据
-                 const [meterResponse, historicalResponse, hourlyResponse, dailyResponse, monthlyResponse, summaryResponse] = await Promise.all([
-                     fetch('/api/meter-data'),
-                     fetch('/api/historical-data'),
-                     fetch('/api/hourly-usage'),
-                     fetch('/api/daily-usage'),
-                     fetch('/api/monthly-usage'),
-                     fetch('/api/usage-summary')
-                 ]);
-                 
-                 refreshBtn.textContent = '获取数据中...';
-                 refreshBtn.disabled = true;
-                 
-                 const meterData = meterResponse.ok ? await meterResponse.json() : null;
-                 const historicalData = historicalResponse.ok ? await historicalResponse.json() : null;
-                 const hourlyData = hourlyResponse.ok ? await hourlyResponse.json() : null;
-                 const dailyData = dailyResponse.ok ? await dailyResponse.json() : null;
-                 const monthlyData = monthlyResponse.ok ? await monthlyResponse.json() : null;
-                 const summaryData = summaryResponse.ok ? await summaryResponse.json() : null;
+                refreshBtn.textContent = '获取数据中...';
+                refreshBtn.disabled = true;
+                
+                // 独立获取每个API数据，避免单个失败影响全部
+                let meterData = null;
+                let historicalData = null;
+                let hourlyData = null;
+                let dailyData = null;
+                let monthlyData = null;
+                let summaryData = null;
+                
+                try {
+                    meterData = await fetchWithRetry('/api/meter-data');
+                } catch (e) {
+                    console.warn('获取电表数据失败:', e);
+                }
+                
+                try {
+                    const historicalResponse = await fetch('/api/historical-data');
+                    if (historicalResponse.ok) {
+                        historicalData = await historicalResponse.json();
+                    }
+                } catch (e) {
+                    console.warn('获取历史数据失败:', e);
+                }
+                
+                try {
+                    hourlyData = await fetchWithRetry('/api/hourly-usage');
+                } catch (e) {
+                    console.warn('获取小时数据失败:', e);
+                }
+                
+                try {
+                    dailyData = await fetchWithRetry('/api/daily-usage');
+                } catch (e) {
+                    console.warn('获取日数据失败:', e);
+                }
+                
+                try {
+                    monthlyData = await fetchWithRetry('/api/monthly-usage');
+                } catch (e) {
+                    console.warn('获取月数据失败:', e);
+                }
+                
+                try {
+                    const summaryResponse = await fetch('/api/usage-summary');
+                    if (summaryResponse.ok) {
+                        summaryData = await summaryResponse.json();
+                    }
+                } catch (e) {
+                    console.warn('获取汇总数据失败:', e);
+                }
                  
                  updateDisplay(meterData);
                  updateSummaryCards(summaryData);
