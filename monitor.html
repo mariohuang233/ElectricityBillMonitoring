@@ -1395,9 +1395,10 @@
                       
                       // 计算预计费用（假设电价0.6元/kWh）
                       const monthUsage = parseFloat(data.this_month?.usage || 0);
-                      const estimatedCost = (monthUsage * 0.6).toFixed(1);
+                      const estimatedCost = (monthUsage * 0.6).toFixed(3); // 提高精度到3位小数
                       const costElement = document.getElementById('estimatedCost');
                       if (costElement) {
+                          console.log('更新预计费用:', monthUsage, 'kWh ->', estimatedCost, '元');
                           costElement.textContent = `¥${estimatedCost}`;
                       }
                   } else {
@@ -1649,7 +1650,12 @@
              
              // 更新每小时图表
              if (hourlyData && hourlyData.success && hourlyData.data) {
-                 updateHourlyChart(hourlyData.data);
+                 // 将对象格式的数据转换为数组格式
+                 const hourlyArray = Object.entries(hourlyData.data).map(([hour, info]) => ({
+                     hour: hour,
+                     usage: typeof info === 'object' ? (info.usage || 0) : (info || 0)
+                 }));
+                 updateHourlyChart(hourlyArray);
              }
 
              // 更新每日图表 - 显示包括今天在内的数据
