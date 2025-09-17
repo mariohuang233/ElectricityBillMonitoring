@@ -9,7 +9,15 @@ import requests
 import re
 import json
 from datetime import datetime
+import pytz
 import time
+
+# 设置北京时区
+BEIJING_TZ = pytz.timezone('Asia/Shanghai')
+
+def get_beijing_time():
+    """获取北京时间"""
+    return datetime.now(BEIJING_TZ)
 
 class MeterDataScraper:
     def __init__(self):
@@ -64,7 +72,7 @@ class MeterDataScraper:
                 'remaining_power': 0.0,
                 'remaining_amount': 0.0,
                 'unit_price': 0.0,
-                'update_time': datetime.now().isoformat(),
+                'update_time': get_beijing_time().isoformat(),
                 'status': 'success'
             }
             

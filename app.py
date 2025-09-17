@@ -12,8 +12,16 @@ import json
 import os
 import requests
 from datetime import datetime, timedelta
+import pytz
 from scraper import MeterDataScraper
 from collections import defaultdict
+
+# 设置北京时区
+BEIJING_TZ = pytz.timezone('Asia/Shanghai')
+
+def get_beijing_time():
+    """获取北京时间"""
+    return datetime.now(BEIJING_TZ)
 
 app = Flask(__name__)
 
@@ -80,7 +88,7 @@ def record_visit(ip, user_agent, path):
         visit_stats['total_visits'] += 1
         visit_stats['unique_visitors'].add(ip)
         
-        today = datetime.now().strftime('%Y-%m-%d')
+        today = get_beijing_time().strftime('%Y-%m-%d')
         visit_stats['daily_visits'][today] += 1
         
         # 获取地理位置信息
@@ -91,7 +99,7 @@ def record_visit(ip, user_agent, path):
             'ip': ip,
             'user_agent': user_agent,
             'path': path,
-            'timestamp': datetime.now().isoformat(),
+            'timestamp': get_beijing_time().isoformat(),
             'location': location
         }
         
@@ -107,7 +115,7 @@ def fetch_data_background():
     
     while True:
         try:
-            print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 开始获取电表数据...")
+            print(f"[{get_beijing_time().strftime('%Y-%m-%d %H:%M:%S')}] 开始获取电表数据...")
             
             # 获取电表数据
             data = scraper.fetch_meter_data(url)
@@ -128,6 +136,16 @@ def fetch_data_background():
         
         # 等待2分钟
         time.sleep(120)
+
+def periodic_save_background():
+    """定期保存数据到文件"""
+    while True:
+        try:
+            time.sleep(600)  # 每10分钟保存一次
+            save_historical_data()
+            print(f"[{get_beijing_time().strftime('%Y-%m-%d %H:%M:%S')}] 📁 定期保存数据完成")
+        except Exception as e:
+            print(f"❌ 定期保存数据异常: {e}")
 
 @app.route('/')
 def index():
@@ -184,7 +202,7 @@ def refresh_data():
         with stats_lock:
             visit_stats['refresh_count'] += 1
         
-        print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 手动刷新数据...")
+        print(f"[{get_beijing_time().strftime('%Y-%m-%d %H:%M:%S')}] 手动刷新数据...")
         
         # 获取电表数据
         data = scraper.fetch_meter_data(url)
@@ -258,7 +276,7 @@ def update_historical_data(data):
     """更新历史数据和多时间维度用电统计"""
     global historical_data, ten_minute_usage, hourly_usage_data, daily_usage_data, weekly_usage_data, monthly_usage_data
     
-    now = datetime.now()
+    now = get_beijing_time()
     timestamp = now.isoformat()
     
     # 添加到历史记录
@@ -274,6 +292,9 @@ def update_historical_data(data):
     # 保持最大记录数
     if len(historical_data) > MAX_HISTORY_RECORDS:
         historical_data = historical_data[-MAX_HISTORY_RECORDS:]
+    
+    # 立即保存数据以增强持久化
+    save_historical_data()
     
     # 计算用电量变化（基于剩余电量差值）
     usage = 0
@@ -378,7 +399,7 @@ def get_status():
     """获取系统状态"""
     try:
         status = {
-            'server_time': datetime.now().isoformat(),
+            'server_time': get_beijing_time().isoformat(),
             'data_available': latest_data is not None,
             'data_file_exists': os.path.exists(data_file),
             'historical_records': len(historical_data),
@@ -506,7 +527,7 @@ def get_traffic_stats():
                     'daily_visits': daily_visits_dict,
                     'refresh_count': visit_stats['refresh_count'],
                     'recent_visitors': recent_visitors,
-                    'stats_time': datetime.now().isoformat()
+                    'stats_time': get_beijing_time().isoformat()
                 }
             })
     except Exception as e:
@@ -519,7 +540,7 @@ def get_traffic_stats():
 def get_usage_summary():
     """获取用电量汇总数据"""
     try:
-        current_time = datetime.now()
+        current_time = get_beijing_time()
         
         # 今日用电量
         today_key = current_time.strftime('%Y-%m-%d')
@@ -599,6 +620,11 @@ if __name__ == '__main__':
     background_thread = threading.Thread(target=fetch_data_background, daemon=True)
     background_thread.start()
     print("✅ 后台数据获取线程已启动（每2分钟更新一次）")
+    
+    # 启动定期保存线程
+    save_thread = threading.Thread(target=periodic_save_background, daemon=True)
+    save_thread.start()
+    print("✅ 定期保存线程已启动（每10分钟保存一次）")
     
     print("\n🌐 监控系统已启动！")
     print("📱 访问地址: http://localhost:8080")
