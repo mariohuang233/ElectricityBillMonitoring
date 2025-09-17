@@ -5,13 +5,15 @@
 提供API接口和静态文件服务
 """
 
-from flask import Flask, jsonify, send_from_directory, send_file
+from flask import Flask, jsonify, send_from_directory, send_file, request
 import threading
 import time
 import json
 import os
+import requests
 from datetime import datetime, timedelta
 from scraper import MeterDataScraper
+from collections import defaultdict
 
 app = Flask(__name__)
 
@@ -19,6 +21,16 @@ app = Flask(__name__)
 scraper = MeterDataScraper()
 latest_data = None
 data_lock = threading.Lock()
+
+# 访问统计数据
+visit_stats = {
+    'total_visits': 0,
+    'unique_visitors': set(),
+    'daily_visits': defaultdict(int),
+    'visitor_details': [],
+    'refresh_count': 0
+}
+stats_lock = threading.Lock()
 
 # 多时间维度数据存储
 historical_data = []  # 原始数据记录
@@ -33,6 +45,61 @@ MAX_HISTORY_RECORDS = 1000  # 增加历史记录数量
 MAX_DETAILED_RECORDS = 144  # 每天144个10分钟记录
 data_file = 'meter_data.json'
 url = "http://www.wap.cnyiot.com/nat/pay.aspx?mid=18100071580"
+
+def get_ip_location(ip):
+    """获取IP地址的地理位置信息"""
+    try:
+        # 使用免费的IP地理位置API
+        response = requests.get(f'http://ip-api.com/json/{ip}?lang=zh-CN', timeout=5)
+        if response.status_code == 200:
+            data = response.json()
+            if data['status'] == 'success':
+                return {
+                    'country': data.get('country', '未知'),
+                    'region': data.get('regionName', '未知'),
+                    'city': data.get('city', '未知'),
+                    'isp': data.get('isp', '未知'),
+                    'lat': data.get('lat', 0),
+                    'lon': data.get('lon', 0)
+                }
+    except Exception as e:
+        print(f"获取IP地理位置失败: {e}")
+    
+    return {
+        'country': '未知',
+        'region': '未知', 
+        'city': '未知',
+        'isp': '未知',
+        'lat': 0,
+        'lon': 0
+    }
+
+def record_visit(ip, user_agent, path):
+    """记录访问信息"""
+    with stats_lock:
+        visit_stats['total_visits'] += 1
+        visit_stats['unique_visitors'].add(ip)
+        
+        today = datetime.now().strftime('%Y-%m-%d')
+        visit_stats['daily_visits'][today] += 1
+        
+        # 获取地理位置信息
+        location = get_ip_location(ip)
+        
+        # 记录访问详情
+        visit_detail = {
+            'ip': ip,
+            'user_agent': user_agent,
+            'path': path,
+            'timestamp': datetime.now().isoformat(),
+            'location': location
+        }
+        
+        visit_stats['visitor_details'].append(visit_detail)
+        
+        # 只保留最近1000条访问记录
+        if len(visit_stats['visitor_details']) > 1000:
+            visit_stats['visitor_details'] = visit_stats['visitor_details'][-1000:]
 
 def fetch_data_background():
     """后台定时获取数据"""
@@ -65,6 +132,13 @@ def fetch_data_background():
 @app.route('/')
 def index():
     """主页"""
+    # 记录访问
+    client_ip = request.environ.get('HTTP_X_FORWARDED_FOR', request.remote_addr)
+    if client_ip and ',' in client_ip:
+        client_ip = client_ip.split(',')[0].strip()
+    user_agent = request.headers.get('User-Agent', '')
+    record_visit(client_ip, user_agent, '/')
+    
     return send_file('monitor.html')
 
 @app.route('/api/meter-data')
@@ -106,6 +180,10 @@ def get_meter_data_file():
 def refresh_data():
     """手动刷新数据"""
     try:
+        # 记录刷新统计
+        with stats_lock:
+            visit_stats['refresh_count'] += 1
+        
         print(f"[{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}] 手动刷新数据...")
         
         # 获取电表数据
@@ -401,6 +479,36 @@ def get_monthly_usage():
             'data': monthly_usage_data,
             'count': len(monthly_usage_data)
         })
+    except Exception as e:
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
+
+@app.route('/api/traffic-stats')
+def get_traffic_stats():
+    """获取流量统计数据"""
+    try:
+        with stats_lock:
+            # 转换set为list以便JSON序列化
+            unique_visitors_list = list(visit_stats['unique_visitors'])
+            daily_visits_dict = dict(visit_stats['daily_visits'])
+            
+            # 获取最近的访问记录
+            recent_visitors = visit_stats['visitor_details'][-50:]  # 最近50条记录
+            
+            return jsonify({
+                'success': True,
+                'data': {
+                    'total_visits': visit_stats['total_visits'],
+                    'unique_visitors_count': len(unique_visitors_list),
+                    'unique_visitors': unique_visitors_list,
+                    'daily_visits': daily_visits_dict,
+                    'refresh_count': visit_stats['refresh_count'],
+                    'recent_visitors': recent_visitors,
+                    'stats_time': datetime.now().isoformat()
+                }
+            })
     except Exception as e:
         return jsonify({
             'success': False,

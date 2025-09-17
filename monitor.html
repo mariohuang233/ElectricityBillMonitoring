@@ -15,19 +15,18 @@
         }
 
         body {
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'SF Pro Text', Helvetica, Arial, sans-serif;
-            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 50%, #f1f3f4 100%);
-            color: #1d1d1f;
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #faf7f2 0%, #f5f1ea 50%, #ede7dc 100%);
+            color: #484848;
             min-height: 100vh;
             padding: 0;
             overflow-x: hidden;
-            line-height: 1.47059;
+            line-height: 1.6;
             font-weight: 400;
-            letter-spacing: -0.022em;
+            letter-spacing: -0.01em;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             text-rendering: optimizeLegibility;
-            font-feature-settings: 'kern' 1;
         }
 
         .background-gradient {
@@ -36,44 +35,42 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(255, 183, 77, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 90, 95, 0.06) 0%, transparent 50%),
+                linear-gradient(135deg, #faf7f2 0%, #f5f1ea 50%, #ede7dc 100%);
             z-index: -1;
         }
 
         .container {
-            max-width: 1024px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 44px 22px;
+            padding: 32px 24px;
         }
 
         .header {
             text-align: center;
-            margin-bottom: 80px;
-            padding: 60px 0;
+            margin-bottom: 48px;
+            padding: 40px 0;
         }
 
         .header h1 {
-            font-size: 64px;
-            font-weight: 700;
-            margin-bottom: 24px;
-            color: #1d1d1f;
-            line-height: 1.05;
-            letter-spacing: -0.025em;
-            background: linear-gradient(135deg, #1d1d1f 0%, #86868b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-feature-settings: 'kern' 1, 'liga' 1;
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #8B4513;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .header p {
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: #64748b;
-            max-width: 500px;
+            font-size: 1.125rem;
+            font-weight: 400;
+            color: #767676;
+            max-width: 600px;
             margin: 0 auto;
-            line-height: 1.8;
+            line-height: 1.6;
             opacity: 0.9;
         }
 
@@ -82,20 +79,20 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: #30d158;
+            background: #FF8A65;
             margin-left: 12px;
             animation: pulse 2s infinite;
-            box-shadow: 0 0 0 0 rgba(48, 209, 88, 0.4);
+            box-shadow: 0 0 0 0 rgba(255, 138, 101, 0.4);
         }
 
         @keyframes pulse {
             0% {
                 transform: scale(0.95);
-                box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+                box-shadow: 0 0 0 0 rgba(255, 138, 101, 0.4);
             }
             50% {
                 transform: scale(1);
-                box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+                box-shadow: 0 0 0 8px rgba(255, 138, 101, 0);
             }
             100% {
                 transform: scale(0.95);
@@ -104,21 +101,22 @@
         }
 
         .warm-card {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 0.5px solid rgba(0, 0, 0, 0.04);
-            border-radius: 18px;
-            padding: 48px;
-            margin-bottom: 48px;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.04), 0 16px 56px rgba(0, 0, 0, 0.04);
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(139, 69, 19, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px rgba(139, 69, 19, 0.08), 0 8px 40px rgba(139, 69, 19, 0.04);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .warm-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08), 0 16px 48px rgba(0, 0, 0, 0.08), 0 32px 64px rgba(0, 0, 0, 0.08);
-            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 32px rgba(139, 69, 19, 0.12), 0 16px 64px rgba(139, 69, 19, 0.06);
+            background: rgba(255, 255, 255, 0.98);
+            border: 1px solid rgba(139, 69, 19, 0.15);
         }
 
         .card-grid {
@@ -144,57 +142,65 @@
 
         .info-item {
             text-align: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 12px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 16px;
             transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             color: #484848;
             backdrop-filter: blur(20px) saturate(180%);
-            border: 0.5px solid rgba(0, 0, 0, 0.04);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(139, 69, 19, 0.08);
+            box-shadow: 0 2px 12px rgba(139, 69, 19, 0.06), 0 4px 24px rgba(139, 69, 19, 0.04);
+            overflow: hidden;
+            word-wrap: break-word;
+            word-break: break-all;
         }
 
         .info-item:hover {
-            transform: translateY(-1px);
-            background: rgba(255, 255, 255, 0.75);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1), 0 8px 40px rgba(139, 69, 19, 0.06);
+            border: 1px solid rgba(139, 69, 19, 0.12);
         }
 
         .info-label {
             font-size: 0.6875rem;
-            color: #86868b;
+            color: #4a4a4a;
             margin-bottom: 6px;
             font-weight: 600;
             letter-spacing: 0.08em;
             line-height: 1.2;
-            opacity: 0.8;
+            opacity: 0.95;
             text-transform: uppercase;
             font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .info-value {
-            font-size: 2.25rem;
-            font-weight: 700;
-            color: #ff6b6b;
-            line-height: 1.05;
-            letter-spacing: -0.025em;
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-feature-settings: 'tnum' 1;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #FF8A65;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, sans-serif;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 100%;
         }
 
         .summary-card {
-            background: rgba(255, 255, 255, 0.72);
-            color: #1d1d1f;
-            border-radius: 16px;
-            padding: 28px 24px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #484848;
+            border-radius: 20px;
+            padding: 32px 24px;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            border: 0.5px solid rgba(0, 0, 0, 0.04);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 4px 16px rgba(0, 0, 0, 0.04), 0 8px 32px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(139, 69, 19, 0.08);
+            box-shadow: 0 2px 16px rgba(139, 69, 19, 0.06), 0 4px 32px rgba(139, 69, 19, 0.04);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             position: relative;
             overflow: hidden;
+            word-wrap: break-word;
         }
 
         .summary-card::before {
@@ -210,35 +216,35 @@
 
         .summary-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08), 0 8px 24px rgba(0, 0, 0, 0.08), 0 16px 40px rgba(0, 0, 0, 0.08);
-            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 24px rgba(139, 69, 19, 0.1), 0 8px 48px rgba(139, 69, 19, 0.06);
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(139, 69, 19, 0.12);
         }
 
         .summary-title {
-            font-size: 0.6875rem;
-            color: #86868b;
-            margin-bottom: 8px;
+            font-size: 0.75rem;
+            color: #767676;
+            margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             font-weight: 600;
             line-height: 1.2;
-            font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .summary-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #1d1d1f;
-            margin-bottom: 4px;
-            letter-spacing: -0.025em;
-            line-height: 1.05;
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-feature-settings: 'tnum' 1;
+            font-size: 2.25rem;
+            font-weight: 600;
+            color: #8B4513;
+            margin-bottom: 8px;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .summary-unit {
-            font-size: 0.8125rem;
-            color: #86868b;
+            font-size: 0.875rem;
+            color: #767676;
             opacity: 0.8;
             font-weight: 500;
             letter-spacing: 0.016em;
@@ -247,21 +253,21 @@
         }
 
         .power-value {
-            background: linear-gradient(135deg, #22c55e, #16a34a);
+            background: linear-gradient(135deg, #8FBC8F, #6B8E23);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .amount-value {
-            background: linear-gradient(135deg, #f59e0b, #d97706);
+            background: linear-gradient(135deg, #D2691E, #A0522D);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
         .price-value {
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            background: linear-gradient(135deg, #CD853F, #8B4513);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -271,53 +277,90 @@
             position: relative;
             height: 420px;
             margin: 25px 0;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 16px;
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 24px;
+            border: 1px solid rgba(139, 69, 19, 0.08);
+            box-shadow: 0 2px 16px rgba(139, 69, 19, 0.06);
+        }
+        
+        .chart-container canvas {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+        }
+        
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: #374151;
+            text-align: center;
+        }
+        
+        .empty-state-icon {
+            width: 80px;
+            height: 60px;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        
+        .empty-state-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #374151;
+        }
+        
+        .empty-state-subtitle {
+            font-size: 14px;
+            color: #6b7280;
         }
 
         .chart-title {
-            font-size: 1.75rem;
+            font-size: 1.5rem;
             font-weight: 600;
-            color: #1d1d1f;
+            color: #8B4513;
             margin-bottom: 24px;
             text-align: center;
-            letter-spacing: -0.022em;
+            letter-spacing: -0.02em;
             line-height: 1.2;
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .update-info {
             text-align: center;
-            color: #86868b;
+            color: #767676;
             font-size: 0.875rem;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.7);
             padding: 16px 20px;
-            border-radius: 12px;
+            border-radius: 16px;
             margin-top: 20px;
             line-height: 1.4;
             font-weight: 400;
-            letter-spacing: -0.016em;
-            font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+            letter-spacing: -0.01em;
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, sans-serif;
+            border: 1px solid rgba(139, 69, 19, 0.08);
         }
 
         .refresh-btn {
-            background: #007aff;
+            background: #8B4513;
             color: white;
             border: none;
             padding: 12px 24px;
-            border-radius: 8px;
+            border-radius: 12px;
             cursor: pointer;
-            font-size: 1.0625rem;
-            font-weight: 400;
+            font-size: 1rem;
+            font-weight: 500;
             margin: 0 12px;
-            transition: all 0.2s ease;
-            box-shadow: none;
-            letter-spacing: -0.022em;
-            line-height: 1.23536;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(139, 69, 19, 0.2);
+            letter-spacing: -0.01em;
+            line-height: 1.2;
             position: relative;
             overflow: hidden;
-            font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Circular', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         .refresh-btn::before {
@@ -336,25 +379,25 @@
         }
 
         .refresh-btn:hover {
-            background: #0056cc;
-            transform: none;
-            box-shadow: none;
+            background: #A0522D;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(139, 69, 19, 0.3);
         }
 
         .refresh-btn:disabled {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(139, 69, 19, 0.4);
             cursor: not-allowed;
             transform: none;
             box-shadow: none;
         }
 
         .refresh-btn:active {
-            background: #004499;
+            background: #654321;
             transform: scale(0.98);
         }
 
         .btn-secondary {
-            background: #34c759;
+            background: #8FBC8F;
             box-shadow: none;
         }
 
@@ -375,18 +418,48 @@
         }
 
         .error-message {
-            background: #ffebee;
+            background: rgba(255, 235, 238, 0.9);
             color: #c62828;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 12px;
             margin: 20px 0;
             border-left: 4px solid #c62828;
+            box-shadow: 0 4px 12px rgba(198, 40, 40, 0.1);
+            backdrop-filter: blur(10px);
+            font-weight: 500;
+        }
+        
+        .error-message p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.5;
         }
 
         .loading {
             text-align: center;
-            padding: 40px;
-            color: #666;
+            padding: 60px 40px;
+            color: #374151;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .loading p {
+            margin: 0;
+            font-size: 16px;
+            font-weight: 500;
+            color: #6b7280;
+        }
+        
+        #dataDiv {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            backdrop-filter: blur(10px);
         }
 
         .spinner {
@@ -536,6 +609,119 @@
                 font-size: 24px;
             }
         }
+        
+        /* 流量监控页面样式 */
+        .traffic-monitor {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .traffic-monitor .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+        }
+        
+        .traffic-monitor .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        
+        .traffic-monitor .header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .visitor-list {
+            max-height: 600px;
+            overflow-y: auto;
+            padding: 10px;
+        }
+        
+        .visitor-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 10px;
+            border-left: 4px solid #007bff;
+            transition: all 0.3s ease;
+        }
+        
+        .visitor-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+        }
+        
+        .visitor-info {
+            flex: 1;
+        }
+        
+        .visitor-ip {
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        
+        .visitor-location {
+            color: #28a745;
+            margin-bottom: 3px;
+        }
+        
+        .visitor-isp {
+            color: #6c757d;
+            font-size: 0.9em;
+        }
+        
+        .visitor-time {
+            color: #6c757d;
+            font-size: 0.9em;
+            text-align: right;
+            min-width: 150px;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #6c757d;
+            font-size: 1.1em;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #007bff;
+            font-size: 1.1em;
+        }
+        
+        /* 滚动条样式 */
+        .visitor-list::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .visitor-list::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .visitor-list::-webkit-scrollbar-thumb {
+            background: #007bff;
+            border-radius: 4px;
+        }
+        
+        .visitor-list::-webkit-scrollbar-thumb:hover {
+            background: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -636,7 +822,7 @@
 
         <div class="warm-card">
             <div class="update-info">
-                <button class="refresh-btn" id="refreshBtn" onclick="fetchData()">🔄 手动刷新</button>
+                <button class="refresh-btn" id="refreshBtn" onclick="handleRefreshClick()">🔄 手动刷新</button>
                 <button class="refresh-btn btn-secondary" onclick="exportData()">📊 导出数据</button>
         <script>
         // 导出数据功能
@@ -779,19 +965,19 @@
                     plugins: {
                         legend: {
                             labels: {
-                                color: '#f5f5f7',
+                                color: '#2c3e50',
                                 font: { size: 14, weight: '500' }
                             }
                         }
                     },
                     scales: {
                         x: {
-                            ticks: { color: '#a1a1aa', font: { size: 12 } },
-                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                            ticks: { color: '#4a5568', font: { size: 12 } },
+                            grid: { color: 'rgba(0, 0, 0, 0.1)' }
                         },
                         y: {
-                            ticks: { color: '#a1a1aa', font: { size: 12 } },
-                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                            ticks: { color: '#4a5568', font: { size: 12 } },
+                            grid: { color: 'rgba(0, 0, 0, 0.1)' }
                         }
                     }
                 }
@@ -806,8 +992,8 @@
                     datasets: [{
                         label: '用电量 (kWh)',
                         data: hourlyData,
-                        backgroundColor: 'rgba(59, 130, 246, 0.8)',
-                        borderColor: 'rgba(59, 130, 246, 1)',
+                        backgroundColor: 'rgba(139, 69, 19, 0.7)',
+                        borderColor: 'rgba(139, 69, 19, 1)',
                         borderWidth: 1,
                         borderRadius: 8,
                         borderSkipped: false
@@ -819,19 +1005,19 @@
                     plugins: {
                         legend: {
                             labels: {
-                                color: '#f5f5f7',
+                                color: '#8B4513',
                                 font: { size: 14, weight: '500' }
                             }
                         }
                     },
                     scales: {
                         x: {
-                            ticks: { color: '#a1a1aa', font: { size: 10 } },
-                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                            ticks: { color: '#767676', font: { size: 10 } },
+                            grid: { color: 'rgba(139, 69, 19, 0.1)' }
                         },
                         y: {
-                            ticks: { color: '#a1a1aa', font: { size: 12 } },
-                            grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                            ticks: { color: '#767676', font: { size: 12 } },
+                            grid: { color: 'rgba(139, 69, 19, 0.1)' }
                         }
                     }
                 }
@@ -846,12 +1032,12 @@
                     datasets: [{
                         label: '每日用电量 (kWh)',
                         data: [],
-                        borderColor: warmColors.success,
-                        backgroundColor: warmColors.success + '20',
+                        borderColor: '#8B4513',
+                        backgroundColor: 'rgba(139, 69, 19, 0.2)',
                         borderWidth: 3,
                         fill: true,
                         tension: 0.3,
-                        pointBackgroundColor: warmColors.success,
+                        pointBackgroundColor: '#8B4513',
                         pointBorderColor: '#fff',
                         pointBorderWidth: 2,
                         pointRadius: 4
@@ -863,7 +1049,7 @@
                     plugins: {
                         legend: {
                             labels: {
-                                color: warmColors.text,
+                                color: '#8B4513',
                                 font: { size: 14 }
                             }
                         }
@@ -871,18 +1057,18 @@
                     scales: {
                         x: {
                             ticks: {
-                                color: warmColors.text + '80'
+                                color: '#767676'
                             },
                             grid: {
-                                color: warmColors.text + '20'
+                                color: 'rgba(139, 69, 19, 0.1)'
                             }
                         },
                         y: {
                             ticks: {
-                                color: warmColors.text + '80'
+                                color: '#767676'
                             },
                             grid: {
-                                color: warmColors.text + '20'
+                                color: 'rgba(139, 69, 19, 0.1)'
                             }
                         }
                     }
@@ -899,16 +1085,16 @@
                         label: '月度用电分布',
                         data: [],
                         backgroundColor: [
-                            warmColors.primary + '80',
-                            warmColors.secondary + '80',
-                            warmColors.success + '80',
-                            warmColors.warning + '80'
+                            'rgba(139, 69, 19, 0.7)',
+                            'rgba(160, 82, 45, 0.7)',
+                            'rgba(210, 180, 140, 0.7)',
+                            'rgba(255, 138, 101, 0.7)'
                         ],
                         borderColor: [
-                            warmColors.primary,
-                            warmColors.secondary,
-                            warmColors.success,
-                            warmColors.warning
+                            '#8B4513',
+                            '#A0522D',
+                            '#D2B48C',
+                            '#FF8A65'
                         ],
                         borderWidth: 2
                     }]
@@ -920,7 +1106,7 @@
                         legend: {
                             position: 'bottom',
                             labels: {
-                                color: warmColors.text,
+                                color: '#8B4513',
                                 font: { size: 12 },
                                 padding: 20
                             }
@@ -944,7 +1130,7 @@
             dataDiv.style.display = 'none';
             refreshBtn.disabled = true;
             refreshBtn.textContent = '刷新中...';
-            statusIndicator.style.backgroundColor = '#FFC107';
+            statusIndicator.style.backgroundColor = '#FF8A65';
 
             try {
                  // 并行获取所有数据
@@ -973,7 +1159,7 @@
                 
                 loadingDiv.style.display = 'none';
                 dataDiv.style.display = 'block';
-                statusIndicator.style.backgroundColor = '#22c55e';
+                statusIndicator.style.backgroundColor = '#8FBC8F';
                 
             } catch (error) {
                 console.error('获取数据失败:', error);
@@ -986,7 +1172,7 @@
                         updateCharts(data);
                         loadingDiv.style.display = 'none';
                         dataDiv.style.display = 'block';
-                        statusIndicator.style.backgroundColor = '#FF9800';
+                        statusIndicator.style.backgroundColor = '#FF8A65';
                     } else {
                         throw new Error('本地数据也无法加载');
                     }
@@ -995,7 +1181,7 @@
                     errorDiv.style.display = 'block';
                     document.getElementById('errorMessage').textContent = 
                         '数据加载失败: ' + error.message + '。请检查网络连接或稍后重试。';
-                    statusIndicator.style.backgroundColor = '#F44336';
+                    statusIndicator.style.backgroundColor = '#CD853F';
                 }
             } finally {
                 refreshBtn.disabled = false;
@@ -1003,17 +1189,64 @@
             }
         }
 
+        // 地址隐私处理函数
+        function maskAddress(address) {
+            if (!address || typeof address !== 'string') return '未知地址';
+            
+            // 匹配常见地址格式并进行脱敏
+            const patterns = [
+                // 匹配 "数字弄数字号数字室" 格式
+                /^(\d+)弄(\d+)号(\d+)(.*)$/,
+                // 匹配 "数字号数字室" 格式
+                /^(\d+)号(\d+)(.*)$/,
+                // 匹配包含楼栋信息的格式
+                /^(.{2,6})(\d+)弄(\d+)号(.*)$/,
+                // 通用格式
+                /^(.{2,10})(\d{2,4})(.*)/
+            ];
+            
+            for (let pattern of patterns) {
+                const match = address.match(pattern);
+                if (match) {
+                    if (match.length >= 4) {
+                        // 保留前缀，隐藏中间数字，保留后缀类型
+                        const prefix = match[1].length > 4 ? match[1].substring(0, 2) + '***' : match[1];
+                        const suffix = match[match.length - 1] ? match[match.length - 1].replace(/\d/g, '*') : '';
+                        return prefix + '***号***' + (suffix ? suffix.substring(0, 2) + '*' : '');
+                    }
+                }
+            }
+            
+            // 如果没有匹配到特定格式，进行通用脱敏
+            if (address.length <= 4) return '***';
+            const start = address.substring(0, 2);
+            const end = address.length > 6 ? address.substring(address.length - 2) : '';
+            return start + '***' + end;
+        }
+        
+        // 电表号脱敏处理函数
+        function maskMeterNumber(number) {
+            if (!number || typeof number !== 'string') return '***';
+            if (number.length <= 6) return '***' + number.slice(-2);
+            
+            const start = number.substring(0, 3);
+            const end = number.substring(number.length - 3);
+            return start + '***' + end;
+        }
+
         // 更新页面显示
         function updateDisplay(data) {
             try {
                 const meterNameElement = document.getElementById('meterName');
                 if (meterNameElement) {
-                    meterNameElement.textContent = data.meter_name || data.name || '未知电表';
+                    const originalName = data.meter_name || data.name || '未知电表';
+                    meterNameElement.textContent = maskAddress(originalName);
                 }
                 
                 const meterNumberElement = document.getElementById('meterNumber');
                 if (meterNumberElement) {
-                    meterNumberElement.textContent = data.meter_number || data.number || '-';
+                    const originalNumber = data.meter_number || data.number || '-';
+                    meterNumberElement.textContent = maskMeterNumber(originalNumber);
                 }
                 
                 const remainingPowerElement = document.getElementById('remainingPower');
@@ -1092,8 +1325,14 @@
         // 更新趋势图表
          function updateTrendChart(data) {
              try {
-                 if (!trendChart || !data || !Array.isArray(data) || data.length === 0) {
-                     console.warn('趋势图表更新失败: 无效数据或图表未初始化');
+                 if (!trendChart) {
+                     console.warn('趋势图表未初始化');
+                     return;
+                 }
+                 
+                 if (!data || !Array.isArray(data) || data.length === 0) {
+                     console.warn('趋势图表更新失败: 无效数据');
+                     showEmptyState(trendChart, '用电趋势数据暂无');
                      return;
                  }
                  
@@ -1127,8 +1366,14 @@
          // 更新每小时图表
          function updateHourlyChart(data) {
              try {
-                 if (!hourlyChart || !data || !Array.isArray(data) || data.length === 0) {
-                     console.warn('每小时图表更新失败: 无效数据或图表未初始化');
+                 if (!hourlyChart) {
+                     console.warn('每小时图表未初始化');
+                     return;
+                 }
+                 
+                 if (!data || !Array.isArray(data) || data.length === 0) {
+                     console.warn('每小时图表更新失败: 无效数据');
+                     showEmptyState(hourlyChart, '每小时用电数据暂无');
                      return;
                  }
                  
@@ -1147,11 +1392,71 @@
              }
          }
 
+         // 显示图表空状态
+         function showEmptyState(chart, message) {
+             if (!chart || !chart.canvas) return;
+             
+             const ctx = chart.canvas.getContext('2d');
+             const canvas = chart.canvas;
+             
+             // 清空画布
+             ctx.clearRect(0, 0, canvas.width, canvas.height);
+             
+             // 绘制背景
+             ctx.fillStyle = 'rgba(248, 249, 250, 0.8)';
+             ctx.fillRect(0, 0, canvas.width, canvas.height);
+             
+             const centerX = canvas.width / 2;
+             const centerY = canvas.height / 2;
+             
+             // 根据画布大小调整图标尺寸
+             const scale = Math.min(canvas.width / 300, canvas.height / 200, 1);
+             const iconSize = 40 * scale;
+             const barWidth = 8 * scale;
+             const spacing = 12 * scale;
+             
+             // 绘制空状态图标 - 适配卡片大小
+             ctx.strokeStyle = '#9ca3af';
+             ctx.lineWidth = 2 * scale;
+             
+             // 绘制图表框架
+             ctx.beginPath();
+             ctx.roundRect(centerX - iconSize, centerY - iconSize/2, iconSize * 2, iconSize, 4 * scale);
+             ctx.stroke();
+             
+             // 绘制柱状图示意 - 适配大小
+             ctx.fillStyle = '#d1d5db';
+             const startX = centerX - iconSize * 0.7;
+             ctx.fillRect(startX, centerY - 10 * scale, barWidth, 20 * scale);
+             ctx.fillRect(startX + spacing, centerY - 5 * scale, barWidth, 15 * scale);
+             ctx.fillRect(startX + spacing * 2, centerY - 15 * scale, barWidth, 25 * scale);
+             ctx.fillRect(startX + spacing * 3, centerY - 8 * scale, barWidth, 18 * scale);
+             ctx.fillRect(startX + spacing * 4, centerY - 3 * scale, barWidth, 13 * scale);
+             
+             // 绘制主要文字 - 适配大小
+             ctx.fillStyle = '#374151';
+             ctx.font = `bold ${Math.max(14, 16 * scale)}px SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif`;
+             ctx.textAlign = 'center';
+             ctx.textBaseline = 'middle';
+             ctx.fillText(message || '暂无数据', centerX, centerY + iconSize + 20 * scale);
+             
+             // 绘制副标题 - 适配大小
+             ctx.fillStyle = '#6b7280';
+             ctx.font = `${Math.max(12, 14 * scale)}px SF Pro Display, -apple-system, BlinkMacSystemFont, sans-serif`;
+             ctx.fillText('数据加载中，请稍候...', centerX, centerY + iconSize + 40 * scale);
+         }
+
          // 更新每日图表
          function updateDailyChart(data) {
              try {
-                 if (!dailyChart || !data || !Array.isArray(data) || data.length === 0) {
-                     console.warn('每日图表更新失败: 无效数据或图表未初始化');
+                 if (!dailyChart) {
+                     console.warn('每日图表未初始化');
+                     return;
+                 }
+                 
+                 if (!data || !Array.isArray(data) || data.length === 0) {
+                     console.warn('每日图表更新失败: 无效数据');
+                     showEmptyState(dailyChart, '每日用电数据暂无');
                      return;
                  }
                  
@@ -1172,6 +1477,9 @@
                  const limitedLabels = labels.slice(-30);
                  const limitedData = usageData.slice(-30);
                  
+                 // 确保即使所有数据都是0也能正常显示图表
+                 console.log('每日图表数据:', limitedData);
+                 
                  dailyChart.data.labels = limitedLabels;
                  dailyChart.data.datasets[0].data = limitedData;
                  dailyChart.update('none');
@@ -1183,9 +1491,27 @@
          // 更新月度图表
          function updateMonthlyChart(data) {
              try {
-                 if (!monthlyChart || !data || !Array.isArray(data) || data.length === 0) {
-                     console.warn('月度图表更新失败: 无效数据或图表未初始化');
+                 if (!monthlyChart) {
+                     console.warn('月度图表未初始化');
                      return;
+                 }
+                 
+                 if (!data || !Array.isArray(data) || data.length === 0) {
+                     console.warn('月度图表更新失败: 无效数据');
+                     showEmptyState(monthlyChart, '月度用电分布暂无');
+                     return;
+                 }
+                 
+                 // 检查是否所有数据都为0
+                 const hasValidData = data.some(d => {
+                     const usage = parseFloat(d.usage);
+                     const amount = parseFloat(d.amount);
+                     return (!isNaN(usage) && usage > 0) || (!isNaN(amount) && amount > 0);
+                 });
+                 
+                 if (!hasValidData) {
+                     // 如果所有数据都为0，显示0值而不是空状态
+                     console.log('月度图表: 所有数据为0，显示0值图表');
                  }
                  
                  const labels = data.map(d => {
@@ -1202,6 +1528,9 @@
                      
                      return Math.max(0, value);
                  });
+                 
+                 // 确保即使某些类别用电量为0也能正常显示图表
+                 console.log('月度图表数据:', chartData);
                  
                  monthlyChart.data.labels = labels;
                  monthlyChart.data.datasets[0].data = chartData;
@@ -1226,29 +1555,74 @@
                  updateHourlyChart(hourlyData.data);
              }
 
-             // 更新每日图表
+             // 更新每日图表 - 显示包括今天在内的数据
              if (dailyData && dailyData.success && dailyData.data) {
-                 updateDailyChart(dailyData.data);
-             } else {
-                 // 模拟每日数据
-                 const simulatedDaily = Array.from({length: 7}, (_, i) => ({
-                     date: new Date(Date.now() - (6-i) * 24 * 60 * 60 * 1000).toISOString(),
-                     usage: Math.random() * 20 + 10
+                 // 将对象格式的数据转换为数组格式
+                 const dailyArray = Object.entries(dailyData.data).map(([date, info]) => ({
+                     date: date,
+                     usage: info.usage || 0
                  }));
+                 updateDailyChart(dailyArray);
+             } else {
+                 // 生成包括今天在内的每日数据（显示进行中的数据）
+                 const simulatedDaily = [];
+                 const now = new Date();
+                 
+                 for (let i = 6; i >= 0; i--) {
+                     const date = new Date(now);
+                     date.setDate(date.getDate() - i);
+                     
+                     let usage;
+                     if (i === 0) {
+                         // 今天的数据 - 基于当前时间计算部分用电量
+                         const hoursElapsed = now.getHours() + now.getMinutes() / 60;
+                         const dailyRate = (Math.random() * 15 + 10) / 24; // 每小时平均用电量
+                         usage = Math.max(0, Math.round((dailyRate * hoursElapsed) * 10) / 10);
+                         // 确保即使是0也显示
+                         if (hoursElapsed < 1) usage = 0; // 凌晨时段可能为0
+                     } else {
+                         // 历史数据 - 完整的一天用电量，可能为0
+                         usage = Math.max(0, Math.round((Math.random() * 15 + 5) * 10) / 10);
+                         // 有5%概率显示0用电量
+                         if (Math.random() < 0.05) usage = 0;
+                     }
+                     
+                     simulatedDaily.push({
+                         date: date.toISOString().split('T')[0],
+                         usage: usage
+                     });
+                 }
                  updateDailyChart(simulatedDaily);
              }
 
-             // 更新月度图表
+             // 更新月度图表 - 显示本月进行中的数据
              if (monthlyData && monthlyData.success && monthlyData.data) {
-                 updateMonthlyChart(monthlyData.data);
+                 // 将对象格式的数据转换为数组格式
+                 const monthlyArray = Object.entries(monthlyData.data).map(([month, info]) => ({
+                     category: month,
+                     usage: info.usage || 0
+                 }));
+                 updateMonthlyChart(monthlyArray);
              } else {
-                 // 模拟月度数据
+                 // 生成本月各类用电数据（显示进行中的数据）
+                 const now = new Date();
+                 const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+                 const daysPassed = now.getDate();
+                 const monthProgress = daysPassed / daysInMonth;
+                 
                  const simulatedMonthly = [
-                     { category: '照明', usage: 120 },
-                     { category: '空调', usage: 180 },
-                     { category: '家电', usage: 95 },
-                     { category: '其他', usage: 45 }
+                     { category: '照明', usage: Math.max(0, Math.round(120 * monthProgress * 10) / 10) },
+                     { category: '空调', usage: Math.max(0, Math.round(180 * monthProgress * 10) / 10) },
+                     { category: '家电', usage: Math.max(0, Math.round(95 * monthProgress * 10) / 10) },
+                     { category: '其他', usage: Math.max(0, Math.round(45 * monthProgress * 10) / 10) }
                  ];
+                 
+                 // 确保即使某些类别为0也显示（比如月初或某些设备未使用）
+                 if (daysPassed === 1 || monthProgress < 0.1) {
+                     // 月初时某些类别可能为0
+                     simulatedMonthly[1].usage = 0; // 空调可能未使用
+                     simulatedMonthly[3].usage = 0; // 其他类别可能为0
+                 }
                  updateMonthlyChart(simulatedMonthly);
              }
          }
@@ -1374,6 +1748,140 @@
             } catch (error) {
                 console.error('更新倒计时显示失败:', error);
             }
+        }
+
+        // 连续点击检测变量
+        let clickCount = 0;
+        let clickTimer = null;
+        
+        // 处理刷新按钮点击
+        function handleRefreshClick() {
+            clickCount++;
+            
+            // 清除之前的计时器
+            if (clickTimer) {
+                clearTimeout(clickTimer);
+            }
+            
+            // 如果连续点击5次，进入流量监控
+            if (clickCount >= 5) {
+                showTrafficMonitor();
+                clickCount = 0;
+                return;
+            }
+            
+            // 正常刷新数据
+            fetchData();
+            
+            // 2秒后重置点击计数
+            clickTimer = setTimeout(() => {
+                clickCount = 0;
+            }, 2000);
+        }
+        
+        // 显示流量监控页面
+        function showTrafficMonitor() {
+            const mainContent = document.querySelector('.container');
+            mainContent.innerHTML = `
+                <div class="traffic-monitor">
+                    <div class="header">
+                        <h1>🚀 流量监控中心</h1>
+                        <p>实时访问统计与地理位置分析</p>
+                        <button class="refresh-btn" onclick="location.reload()">🏠 返回主页</button>
+                    </div>
+                    
+                    <div class="summary-grid">
+                        <div class="summary-card">
+                            <div class="summary-title">总访问量</div>
+                            <div class="summary-value" id="totalVisits">-</div>
+                            <div class="summary-unit">次</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-title">独立访客</div>
+                            <div class="summary-value" id="uniqueVisitors">-</div>
+                            <div class="summary-unit">人</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-title">刷新次数</div>
+                            <div class="summary-value" id="refreshCount">-</div>
+                            <div class="summary-unit">次</div>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-title">今日访问</div>
+                            <div class="summary-value" id="todayVisits">-</div>
+                            <div class="summary-unit">次</div>
+                        </div>
+                    </div>
+                    
+                    <div class="warm-card">
+                        <h2 class="chart-title">🌍 访客地理分布</h2>
+                        <div class="visitor-list" id="visitorList">
+                            <div class="loading">加载中...</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // 加载流量数据
+            loadTrafficStats();
+        }
+        
+        // 加载流量统计数据
+        async function loadTrafficStats() {
+            try {
+                const response = await fetch('/api/traffic-stats');
+                const result = await response.json();
+                
+                if (result.success) {
+                    const data = result.data;
+                    
+                    // 更新统计卡片
+                    document.getElementById('totalVisits').textContent = data.total_visits;
+                    document.getElementById('uniqueVisitors').textContent = data.unique_visitors_count;
+                    document.getElementById('refreshCount').textContent = data.refresh_count;
+                    
+                    // 获取今日访问量
+                    const today = new Date().toISOString().split('T')[0];
+                    const todayVisits = data.daily_visits[today] || 0;
+                    document.getElementById('todayVisits').textContent = todayVisits;
+                    
+                    // 显示访客列表
+                    displayVisitorList(data.recent_visitors);
+                } else {
+                    console.error('获取流量统计失败:', result.error);
+                }
+            } catch (error) {
+                console.error('加载流量统计失败:', error);
+            }
+        }
+        
+        // 显示访客列表
+        function displayVisitorList(visitors) {
+            const visitorList = document.getElementById('visitorList');
+            
+            if (!visitors || visitors.length === 0) {
+                visitorList.innerHTML = '<div class="empty-state">暂无访客记录</div>';
+                return;
+            }
+            
+            const visitorHtml = visitors.reverse().map(visitor => {
+                const time = new Date(visitor.timestamp).toLocaleString('zh-CN');
+                const location = visitor.location;
+                const locationStr = `${location.country} ${location.region} ${location.city}`;
+                
+                return `
+                    <div class="visitor-item">
+                        <div class="visitor-info">
+                            <div class="visitor-ip">🌐 ${visitor.ip}</div>
+                            <div class="visitor-location">📍 ${locationStr}</div>
+                            <div class="visitor-isp">🏢 ${location.isp}</div>
+                        </div>
+                        <div class="visitor-time">${time}</div>
+                    </div>
+                `;
+            }).join('');
+            
+            visitorList.innerHTML = visitorHtml;
         }
 
         // 页面可见性变化处理
