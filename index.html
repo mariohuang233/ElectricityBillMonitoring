@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>电费监控系统</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>电费监控系统</h1>
+            <div class="current-time" id="currentTime"></div>
+        </header>
+
+        <div class="main-content">
+            <!-- 电表基本信息卡片 -->
+            <div class="card meter-info">
+                <div class="card-header">
+                    <h2>电表信息</h2>
+                    <div class="status-indicator online" id="meterStatus">
+                        <span class="status-dot"></span>
+                        在线
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>表名称:</label>
+                            <span id="meterName">2759弄18号402阳台</span>
+                        </div>
+                        <div class="info-item">
+                            <label>表号:</label>
+                            <span id="meterNumber">18100071580</span>
+                        </div>
+                        <div class="info-item">
+                            <label>剩余电量:</label>
+                            <span id="remainingPower" class="highlight">14.84 kWh</span>
+                        </div>
+                        <div class="info-item">
+                            <label>剩余金额:</label>
+                            <span id="remainingAmount" class="highlight">¥14.84</span>
+                        </div>
+                        <div class="info-item">
+                            <label>综合费用:</label>
+                            <span id="unitPrice">1.000 元/kWh</span>
+                        </div>
+                        <div class="info-item">
+                            <label>最后更新:</label>
+                            <span id="lastUpdate">刚刚</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 实时用电监控 -->
+            <div class="card power-monitor">
+                <div class="card-header">
+                    <h2>实时用电</h2>
+                    <div class="power-value">
+                        <span id="currentPower">0.85</span> kW
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="power-gauge">
+                        <canvas id="powerGauge" width="200" height="100"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 今日用电统计 -->
+            <div class="card daily-stats">
+                <div class="card-header">
+                    <h2>今日用电</h2>
+                    <div class="stats-summary">
+                        <span id="todayUsage">12.5</span> kWh
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="todayCost">¥12.50</div>
+                            <div class="stat-label">今日费用</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="avgPower">0.52</div>
+                            <div class="stat-label">平均功率(kW)</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="peakPower">2.1</div>
+                            <div class="stat-label">峰值功率(kW)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 24小时用电趋势图 -->
+            <div class="card chart-container">
+                <div class="card-header">
+                    <h2>24小时用电趋势</h2>
+                    <div class="chart-controls">
+                        <button class="btn-small active" onclick="switchChart('hourly')">小时</button>
+                        <button class="btn-small" onclick="switchChart('daily')">日</button>
+                        <button class="btn-small" onclick="switchChart('weekly')">周</button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <canvas id="usageChart" width="800" height="300"></canvas>
+                </div>
+            </div>
+
+            <!-- 用电历史记录 -->
+            <div class="card history-table">
+                <div class="card-header">
+                    <h2>用电记录</h2>
+                    <button class="btn-small" onclick="exportData()">导出数据</button>
+                </div>
+                <div class="card-content">
+                    <div class="table-container">
+                        <table id="historyTable">
+                            <thead>
+                                <tr>
+                                    <th>时间</th>
+                                    <th>用电量(kWh)</th>
+                                    <th>费用(元)</th>
+                                    <th>平均功率(kW)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="historyTableBody">
+                                <!-- 数据将通过JavaScript动态填充 -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 预警设置 -->
+            <div class="card alert-settings">
+                <div class="card-header">
+                    <h2>预警设置</h2>
+                </div>
+                <div class="card-content">
+                    <div class="alert-grid">
+                        <div class="alert-item">
+                            <label>余额预警(元):</label>
+                            <input type="number" id="balanceAlert" value="10" min="0" step="0.1">
+                        </div>
+                        <div class="alert-item">
+                            <label>功率预警(kW):</label>
+                            <input type="number" id="powerAlert" value="3" min="0" step="0.1">
+                        </div>
+                        <div class="alert-item">
+                            <label>日用电预警(kWh):</label>
+                            <input type="number" id="dailyAlert" value="20" min="0" step="0.1">
+                        </div>
+                        <div class="alert-item">
+                            <button class="btn-primary" onclick="saveAlertSettings()">保存设置</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 预警通知 -->
+        <div class="alert-notification" id="alertNotification" style="display: none;">
+            <div class="alert-content">
+                <span class="alert-icon">⚠️</span>
+                <span class="alert-message" id="alertMessage"></span>
+                <button class="alert-close" onclick="closeAlert()">×</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
