@@ -1162,12 +1162,19 @@
         async function fetchWithRetry(url, maxRetries = 3, delay = 1000) {
             for (let i = 0; i < maxRetries; i++) {
                 try {
+                    // 使用AbortController实现超时控制
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 10000);
+                    
                     const response = await fetch(url, {
-                        timeout: 10000,
+                        signal: controller.signal,
                         headers: {
                             'Cache-Control': 'no-cache'
                         }
                     });
+                    
+                    clearTimeout(timeoutId);
+                    
                     if (response.ok) {
                         return await response.json();
                     }

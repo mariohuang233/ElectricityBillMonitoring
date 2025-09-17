@@ -177,20 +177,27 @@ def get_meter_data():
     try:
         with data_lock:
             if latest_data:
-                return jsonify(latest_data)
+                # 确保返回数据包含success字段
+                response_data = latest_data.copy()
+                response_data['success'] = True
+                return jsonify(response_data)
             else:
                 # 尝试从文件读取
                 if os.path.exists(data_file):
                     with open(data_file, 'r', encoding='utf-8') as f:
                         data = json.load(f)
+                        # 确保返回数据包含success字段
+                        data['success'] = True
                         return jsonify(data)
                 else:
                     return jsonify({
+                        'success': False,
                         'error': '暂无数据',
                         'message': '系统正在初始化，请稍后刷新'
                     }), 503
     except Exception as e:
         return jsonify({
+            'success': False,
             'error': '服务器错误',
             'message': str(e)
         }), 500
