@@ -423,11 +423,13 @@ def get_status():
     """获取系统状态"""
     try:
         status = {
+            'success': True,
             'server_time': get_beijing_time().isoformat(),
             'data_available': latest_data is not None,
             'data_file_exists': os.path.exists(data_file),
             'historical_records': len(historical_data),
-            'hourly_records': len(hourly_usage_data)
+            'hourly_records': len(hourly_usage_data),
+            'system_status': 'running'
         }
         
         if latest_data:
@@ -436,7 +438,11 @@ def get_status():
             
         return jsonify(status)
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'system_status': 'error'
+        }), 500
 
 @app.route('/api/historical-data')
 def get_historical_data():

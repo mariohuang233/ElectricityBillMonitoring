@@ -10,9 +10,11 @@ restartPolicyMaxRetries = 10
 PORT = "8080"
 PYTHON_VERSION = "3.11"
 FLASK_ENV = "production"
+PYTHONUNBUFFERED = "1"
+TZ = "Asia/Shanghai"
 
 [healthcheck]
-path = "/"
+path = "/api/status"
 interval = 30
 timeout = 10
 retries = 3
