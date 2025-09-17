@@ -1434,23 +1434,37 @@
                      return;
                  }
                  
-                 const labels = data.map(d => {
+                 // 显示更多数据点，最多显示最近100个数据点
+                 const displayData = data.slice(-100);
+                 
+                 const labels = displayData.map(d => {
                      try {
-                         return new Date(d.timestamp).toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+                         const date = new Date(d.timestamp);
+                         // 根据数据点数量调整时间格式
+                         if (displayData.length > 50) {
+                             // 数据点多时显示日期+时间
+                             return date.toLocaleDateString('zh-CN', { month: 'short', day: 'numeric' }) + ' ' + 
+                                    date.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+                         } else {
+                             // 数据点少时只显示时间
+                             return date.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' });
+                         }
                      } catch (e) {
                          return '无效时间';
                      }
                  });
                  
-                 const powerData = data.map(d => {
+                 const powerData = displayData.map(d => {
                      const value = parseFloat(d.remaining_power);
                      return isNaN(value) ? 0 : Math.max(0, value);
                  });
                  
-                 const amountData = data.map(d => {
+                 const amountData = displayData.map(d => {
                      const value = parseFloat(d.remaining_amount);
                      return isNaN(value) ? 0 : Math.max(0, value);
                  });
+                 
+                 console.log(`📈 趋势图表更新: 显示 ${displayData.length} 个数据点`);
                  
                  trendChart.data.labels = labels;
                  trendChart.data.datasets[0].data = powerData;
