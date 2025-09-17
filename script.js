@@ -495,8 +495,17 @@ function updateCurrentTime() {
     document.getElementById('currentTime').textContent = timeString;
 }
 
-// 页面加载完成后初始化
-document.addEventListener('DOMContentLoaded', function() {
+// 确保Chart.js加载完成后再初始化
+function waitForChart() {
+    if (typeof Chart !== 'undefined') {
+        initializeApp();
+    } else {
+        console.log('等待Chart.js加载...');
+        setTimeout(waitForChart, 100);
+    }
+}
+
+function initializeApp() {
     // 初始化图表
     initCharts();
     
@@ -524,6 +533,11 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCurrentTime();
     
     console.log('电费监控系统初始化完成');
+}
+
+// 页面加载完成后等待Chart.js
+document.addEventListener('DOMContentLoaded', function() {
+    waitForChart();
 });
 
 // 模拟网络状态变化

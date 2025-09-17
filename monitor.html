@@ -876,10 +876,19 @@
         let dailyData = [];
         let monthlyData = [];
 
-        // 页面加载完成后初始化
-        document.addEventListener('DOMContentLoaded', function() {
+        // 确保Chart.js加载完成后再初始化
+        function waitForChart() {
+            if (typeof Chart !== 'undefined') {
+                initializeApp();
+            } else {
+                console.log('等待Chart.js加载...');
+                setTimeout(waitForChart, 100);
+            }
+        }
+        
+        function initializeApp() {
             try {
-                console.log('页面加载完成，开始初始化');
+                console.log('Chart.js已加载，开始初始化页面');
                 
                 // 检查必要的DOM元素
                 const requiredElements = [
@@ -914,7 +923,12 @@
                     }
                 }, 5000);
             }
-        });
+        }
+        
+        // 页面加载完成后等待Chart.js
+         document.addEventListener('DOMContentLoaded', function() {
+             waitForChart();
+         });
 
         // 初始化图表
         function initCharts() {
