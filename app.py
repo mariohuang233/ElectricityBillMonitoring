@@ -249,57 +249,29 @@ def load_historical_data():
     """加载历史数据"""
     global historical_data, ten_minute_usage, hourly_usage_data, daily_usage_data, weekly_usage_data, monthly_usage_data
     
-    # 首先加载基础数据
-    base_data_file = 'base_data.json'
-    if os.path.exists(base_data_file):
-        try:
-            with open(base_data_file, 'r', encoding='utf-8') as f:
-                base_data = json.load(f)
-                historical_data = base_data.get('historical_data', [])
-                ten_minute_usage = base_data.get('ten_minute_usage', {})
-                hourly_usage_data = base_data.get('hourly_usage_data', {})
-                daily_usage_data = base_data.get('daily_usage_data', {})
-                weekly_usage_data = base_data.get('weekly_usage_data', {})
-                monthly_usage_data = base_data.get('monthly_usage_data', {})
-                print(f"✅ 已加载基础数据: {len(historical_data)} 条历史记录")
-        except Exception as e:
-            print(f"加载基础数据失败: {e}")
-            historical_data = []
-            ten_minute_usage = {}
-            hourly_usage_data = {}
-            daily_usage_data = {}
-            weekly_usage_data = {}
-            monthly_usage_data = {}
-    else:
-        historical_data = []
-        ten_minute_usage = {}
-        hourly_usage_data = {}
-        daily_usage_data = {}
-        weekly_usage_data = {}
-        monthly_usage_data = {}
+    # 初始化数据结构
+    historical_data = []
+    ten_minute_usage = {}
+    hourly_usage_data = {}
+    daily_usage_data = {}
+    weekly_usage_data = {}
+    monthly_usage_data = {}
     
-    # 然后加载实时数据并合并
+    # 加载实时监控数据
     if os.path.exists(DATA_HISTORY_FILE):
         try:
             with open(DATA_HISTORY_FILE, 'r', encoding='utf-8') as f:
                 history = json.load(f)
-                # 合并历史数据（避免重复）
-                existing_timestamps = {item['timestamp'] for item in historical_data}
-                new_data = [item for item in history.get('historical_data', []) 
-                           if item['timestamp'] not in existing_timestamps]
-                historical_data.extend(new_data)
+                historical_data = history.get('historical_data', [])
+                ten_minute_usage = history.get('ten_minute_usage', {})
+                hourly_usage_data = history.get('hourly_usage_data', {})
+                daily_usage_data = history.get('daily_usage_data', {})
+                weekly_usage_data = history.get('weekly_usage_data', {})
+                monthly_usage_data = history.get('monthly_usage_data', {})
                 
-                # 合并其他数据
-                ten_minute_usage.update(history.get('ten_minute_usage', {}))
-                hourly_usage_data.update(history.get('hourly_usage_data', {}))
-                daily_usage_data.update(history.get('daily_usage_data', {}))
-                weekly_usage_data.update(history.get('weekly_usage_data', {}))
-                monthly_usage_data.update(history.get('monthly_usage_data', {}))
-                
-                if new_data:
-                    print(f"✅ 已合并实时数据: {len(new_data)} 条新记录")
+                print(f"✅ 已加载监控数据: {len(historical_data)} 条历史记录")
         except Exception as e:
-            print(f"加载实时数据失败: {e}")
+            print(f"加载监控数据失败: {e}")
 
 def save_historical_data():
     """保存历史数据"""
