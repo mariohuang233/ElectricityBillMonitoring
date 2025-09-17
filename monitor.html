@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>智能电表监控 - 温馨家居管理</title>
+    <title>⚡️雷神一二布布的家庭用电</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         /* 优雅极简主义设计风格 */
@@ -728,8 +728,8 @@
     <div class="background-gradient"></div>
     <div class="container">
         <div class="header">
-            <h1>🏠 智能电表监控 <span class="status-indicator" id="statusIndicator"></span></h1>
-            <p>温馨家居，智能管理每一度电，让生活更美好</p>
+            <h1>🏠 一二布布的用电监控 <span class="status-indicator" id="statusIndicator"></span></h1>
+            <p>智能管理每一度电，让生活更美好</p>
         </div>
 
         <div class="summary-grid">
@@ -1281,19 +1281,19 @@
                       // 更新今日用电
                       const todayElement = document.getElementById('todayUsage');
                       if (todayElement) {
-                          todayElement.textContent = (parseFloat(data.today?.usage || 0)).toFixed(1);
+                          todayElement.textContent = (parseFloat(data.today?.usage || 0)).toFixed(3);
                       }
                       
                       // 更新本周用电
                       const weekElement = document.getElementById('weekUsage');
                       if (weekElement) {
-                          weekElement.textContent = (parseFloat(data.this_week?.usage || 0)).toFixed(1);
+                          weekElement.textContent = (parseFloat(data.this_week?.usage || 0)).toFixed(3);
                       }
                       
                       // 更新本月用电
                       const monthElement = document.getElementById('monthUsage');
                       if (monthElement) {
-                          monthElement.textContent = (parseFloat(data.this_month?.usage || 0)).toFixed(1);
+                          monthElement.textContent = (parseFloat(data.this_month?.usage || 0)).toFixed(3);
                       }
                       
                       // 计算预计费用（假设电价0.6元/kWh）
