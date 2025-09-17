@@ -1,0 +1,34 @@
+# 运行时生成的数据文件
+*.log
+data_history.json
+meter_data.json
+
+# Python缓存文件
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# 调试文件
+debug_response*.html
+
+# 环境变量文件
+.env
+.venv
+env/
+venv/
+
+# IDE文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统文件
+.DS_Store
+Thumbs.db
+
+# 临时文件
+*.tmp
+*.temp
