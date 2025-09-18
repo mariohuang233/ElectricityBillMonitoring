@@ -122,8 +122,104 @@ function generateWeeklyData() {
     return { labels, data };
 }
 
+function generate10MinData() {
+    const data = [];
+    const labels = [];
+    const now = new Date();
+    
+    // 生成最近24小时的10分钟数据点
+    for (let i = 143; i >= 0; i--) {
+        const time = new Date(now.getTime() - i * 10 * 60 * 1000);
+        const timeStr = time.getHours().toString().padStart(2, '0') + ':' + 
+                       (Math.floor(time.getMinutes() / 10) * 10).toString().padStart(2, '0');
+        labels.push(timeStr);
+        
+        // 模拟10分钟用电量
+        const usage = Math.random() * 0.1 + 0.01;
+        data.push(parseFloat(usage.toFixed(3)));
+    }
+    
+    return { labels, data };
+}
+
+function formatApiData(apiData, type) {
+    const labels = [];
+    const data = [];
+    
+    // 将API数据转换为数组并排序
+    const sortedEntries = Object.entries(apiData).sort((a, b) => a[0].localeCompare(b[0]));
+    
+    for (const [key, value] of sortedEntries) {
+        let label;
+        let usage = typeof value === 'object' ? (value.usage || 0) : value;
+        
+        if (type === 'hourly') {
+            // 格式: "2025-09-17-14" -> "09/17 14:00" (显示日期和小时)
+            const parts = key.split('-');
+            if (parts.length >= 4) {
+                const month = parts[1];
+                const day = parts[2];
+                const hour = parts[3];
+                label = `${month}/${day} ${hour}:00`;
+            } else {
+                label = key;
+            }
+        } else if (type === 'daily') {
+            // 格式: "2025-09-17" -> "09/17"
+            const parts = key.split('-');
+            if (parts.length >= 3) {
+                label = parts[1] + '/' + parts[2];
+            } else {
+                label = key;
+            }
+        } else if (type === '10min') {
+            // 格式: "2025-09-17 14:30" -> "14:30"
+            const parts = key.split(' ');
+            if (parts.length >= 2) {
+                label = parts[1];
+            } else {
+                label = key;
+            }
+        } else {
+            label = key;
+        }
+        
+        labels.push(label);
+        data.push(parseFloat(usage.toFixed(3)));
+    }
+    
+    return { labels, data };
+}
+
 // 获取图表数据
-function getChartData(type = 'hourly') {
+async function getChartData(type = 'hourly') {
+    // 优先使用API数据
+    try {
+        let apiUrl;
+        if (type === 'hourly') {
+            apiUrl = '/api/hourly-usage';
+        } else if (type === 'daily') {
+            apiUrl = '/api/daily-usage';
+        } else if (type === 'weekly') {
+            apiUrl = '/api/weekly-usage';
+        } else if (type === '10min') {
+            apiUrl = '/api/10min-usage';
+        }
+        
+        if (apiUrl) {
+            const response = await fetch(apiUrl);
+            if (response.ok) {
+                const result = await response.json();
+                if (result.success && result.data) {
+                    return formatApiData(result.data, type);
+                }
+            }
+        }
+    } catch (error) {
+        console.warn(`获取${type}数据失败，使用模拟数据:`, error);
+    }
+    
+    // 备用：使用缓存数据
     if (useRealData && realDataCache) {
         if (type === 'hourly' && realDataCache.hourly_usage) {
             return {
@@ -138,18 +234,20 @@ function getChartData(type = 'hourly') {
         }
     }
     
-    // 使用模拟数据
+    // 最后备用：使用模拟数据
     if (type === 'hourly') {
         return generateHourlyData();
     } else if (type === 'daily') {
         return generateDailyData();
     } else if (type === 'weekly') {
         return generateWeeklyData();
+    } else if (type === '10min') {
+        return generate10MinData();
     }
 }
 
 // 初始化图表
-function initCharts() {
+async function initCharts() {
     // 检查Chart.js是否正确加载
     if (typeof Chart === 'undefined') {
         console.error('Chart.js未正确加载');
@@ -159,7 +257,7 @@ function initCharts() {
     
     // 初始化用电趋势图
     const ctx = document.getElementById('usageChart').getContext('2d');
-    const hourlyData = getChartData('hourly');
+    const hourlyData = await getChartData('hourly');
     
     usageChart = new Chart(ctx, {
         type: 'line',
@@ -202,7 +300,8 @@ function initCharts() {
                         color: 'rgba(0, 0, 0, 0.05)'
                     },
                     ticks: {
-                        color: '#666'
+                        color: '#666',
+                        maxTicksLimit: 12  // 限制横坐标标签数量
                     }
                 }
             },
@@ -290,36 +389,48 @@ function initPowerGauge() {
 }
 
 // 切换图表类型
-function switchChart(type) {
+async function switchChart(type) {
+    if (!usageChart) return;
+    
     currentChartType = type;
+    const chartData = await getChartData(type);
     
-    // 更新按钮状态
-    document.querySelectorAll('.chart-controls .btn-small').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    event.target.classList.add('active');
-    
-    let chartData;
-    let label;
-    
-    switch (type) {
-        case 'hourly':
-            chartData = generateHourlyData();
-            label = '用电量 (kWh)';
-            break;
-        case 'daily':
-            chartData = generateDailyData();
-            label = '日用电量 (kWh)';
-            break;
-        case 'weekly':
-            chartData = generateWeeklyData();
-            label = '周用电量 (kWh)';
-            break;
-    }
-    
+    // 更新图表数据
     usageChart.data.labels = chartData.labels;
     usageChart.data.datasets[0].data = chartData.data;
-    usageChart.data.datasets[0].label = label;
+    
+    // 更新图表标题和横坐标设置
+    let title = '用电量 (kWh)';
+    let maxTicksLimit = 12;
+    
+    if (type === 'daily') {
+        title = '每日用电量 (kWh)';
+        maxTicksLimit = 7;
+    } else if (type === 'weekly') {
+        title = '每周用电量 (kWh)';
+        maxTicksLimit = 7;
+    } else if (type === '10min') {
+        title = '10分钟用电量 (kWh)';
+        maxTicksLimit = 24;  // 显示更多时间点
+    } else {
+        title = '每小时用电量 (kWh)';
+        maxTicksLimit = 12;
+    }
+    
+    usageChart.data.datasets[0].label = title;
+    
+    // 更新横坐标设置
+    usageChart.options.scales.x.ticks.maxTicksLimit = maxTicksLimit;
+    
+    // 更新按钮状态
+    document.querySelectorAll('.chart-controls button').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    const targetBtn = document.querySelector(`[onclick="switchChart('${type}')"]`);
+    if (targetBtn) {
+        targetBtn.classList.add('active');
+    }
+    
     usageChart.update();
 }
 

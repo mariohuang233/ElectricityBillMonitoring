@@ -1248,6 +1248,14 @@
                     console.warn('获取月数据失败:', e);
                 }
                 
+                // 获取10分钟数据用于用电趋势分析
+                let tenMinData = null;
+                try {
+                    tenMinData = await fetchWithRetry('/api/10min-usage');
+                } catch (e) {
+                    console.warn('获取10分钟数据失败:', e);
+                }
+                
                 try {
                     const summaryResponse = await fetch('/api/usage-summary');
                     if (summaryResponse.ok) {
@@ -1259,7 +1267,7 @@
                  
                  updateDisplay(meterData);
                  updateSummaryCards(summaryData);
-                 updateChartsWithRealData(meterData, historicalData, hourlyData, dailyData, monthlyData);
+                 updateChartsWithRealData(meterData, tenMinData, hourlyData, dailyData, monthlyData);
                 
                 loadingDiv.style.display = 'none';
                 dataDiv.style.display = 'block';
@@ -1400,12 +1408,25 @@
                           monthElement.textContent = (parseFloat(data.this_month?.usage || 0)).toFixed(3);
                       }
                       
-                      // 计算预计费用（假设电价0.6元/kWh）
+                      // 计算预计费用（基于本月用电量和日期百分比估算）
                       const monthUsage = parseFloat(data.this_month?.usage || 0);
-                      const estimatedCost = (monthUsage * 0.6).toFixed(3); // 提高精度到3位小数
+                      const now = new Date();
+                      const currentDay = now.getDate();
+                      const daysInMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0).getDate();
+                      const monthProgress = currentDay / daysInMonth; // 当前日期占本月百分比
+                      
+                      // 预计本月总用电量 = 当前用电量 / 月进度百分比
+                      const estimatedMonthUsage = monthProgress > 0 ? monthUsage / monthProgress : monthUsage;
+                      const estimatedCost = (estimatedMonthUsage * 1.0).toFixed(2); // 假设电价1.0元/kWh
+                      
                       const costElement = document.getElementById('estimatedCost');
                       if (costElement) {
-                          console.log('更新预计费用:', monthUsage, 'kWh ->', estimatedCost, '元');
+                          console.log('预计费用计算:', {
+                              currentUsage: monthUsage,
+                              monthProgress: (monthProgress * 100).toFixed(1) + '%',
+                              estimatedMonthUsage: estimatedMonthUsage.toFixed(3),
+                              estimatedCost: estimatedCost
+                          });
                           costElement.textContent = `¥${estimatedCost}`;
                       }
                   } else {
@@ -1427,7 +1448,67 @@
               }
           }
 
-        // 更新趋势图表
+        // 更新趋势图表（使用10分钟数据）
+         function updateTrendChartWith10MinData(data) {
+             try {
+                 if (!trendChart) {
+                     console.warn('趋势图表未初始化');
+                     return;
+                 }
+                 
+                 if (!data || typeof data !== 'object' || Object.keys(data).length === 0) {
+                     console.warn('趋势图表更新失败: 无效的10分钟数据');
+                     showEmptyState(trendChart, '用电趋势数据暂无');
+                     return;
+                 }
+                 
+                 // 将对象格式的10分钟数据转换为数组并排序
+                 const sortedEntries = Object.entries(data).sort((a, b) => a[0].localeCompare(b[0]));
+                 
+                 // 只显示最近的数据点（最多144个，即24小时的10分钟数据）
+                 const displayEntries = sortedEntries.slice(-144);
+                 
+                 const labels = displayEntries.map(([timeKey, info]) => {
+                     try {
+                         // 格式: "2025-09-17 14:30" -> "14:30"
+                         const parts = timeKey.split(' ');
+                         if (parts.length >= 2) {
+                             return parts[1]; // 只显示时间部分
+                         } else {
+                             return timeKey;
+                         }
+                     } catch (e) {
+                         return '无效时间';
+                     }
+                 });
+                 
+                 // 使用用电量数据作为趋势数据
+                 const usageData = displayEntries.map(([timeKey, info]) => {
+                     const usage = typeof info === 'object' ? (info.usage || 0) : (info || 0);
+                     return Math.max(0, parseFloat(usage) || 0);
+                 });
+                 
+                 // 计算累计用电量作为第二条线
+                 let cumulativeUsage = 0;
+                 const cumulativeData = usageData.map(usage => {
+                     cumulativeUsage += usage;
+                     return parseFloat(cumulativeUsage.toFixed(3));
+                 });
+                 
+                 console.log(`📈 趋势图表更新: 显示 ${displayEntries.length} 个10分钟数据点`);
+                 
+                 trendChart.data.labels = labels;
+                 trendChart.data.datasets[0].data = usageData;
+                 trendChart.data.datasets[0].label = '10分钟用电量 (kWh)';
+                 trendChart.data.datasets[1].data = cumulativeData;
+                 trendChart.data.datasets[1].label = '累计用电量 (kWh)';
+                 trendChart.update('none');
+             } catch (error) {
+                 console.error('更新趋势图表失败:', error);
+             }
+         }
+         
+         // 更新趋势图表（使用历史数据，保留作为备用）
          function updateTrendChart(data) {
              try {
                  if (!trendChart) {
@@ -1660,12 +1741,12 @@
          }
 
          // 更新图表数据（使用真实数据）
-         function updateChartsWithRealData(meterData, historicalData, hourlyData, dailyData, monthlyData) {
-             // 更新趋势图
-             if (historicalData && historicalData.success && historicalData.data) {
-                 updateTrendChart(historicalData.data);
+         function updateChartsWithRealData(meterData, tenMinData, hourlyData, dailyData, monthlyData) {
+             // 更新趋势图（使用10分钟数据）
+             if (tenMinData && tenMinData.success && tenMinData.data) {
+                 updateTrendChartWith10MinData(tenMinData.data);
              } else {
-                 // 如果没有历史数据，使用当前数据模拟
+                 // 如果没有10分钟数据，使用当前数据模拟
                  updateCharts(meterData.data || meterData);
              }
              

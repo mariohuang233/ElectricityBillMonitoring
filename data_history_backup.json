@@ -1,0 +1,2279 @@
+{
+  "historical_data": [
+    {
+      "timestamp": "2025-01-15T08:00:00.000000",
+      "remaining_power": 45.2,
+      "remaining_amount": 45.2,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-15T10:00:00.000000",
+      "remaining_power": 44.8,
+      "remaining_amount": 44.8,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-15T12:00:00.000000",
+      "remaining_power": 44.3,
+      "remaining_amount": 44.3,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-15T14:00:00.000000",
+      "remaining_power": 43.9,
+      "remaining_amount": 43.9,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-15T16:00:00.000000",
+      "remaining_power": 43.4,
+      "remaining_amount": 43.4,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-15T18:00:00.000000",
+      "remaining_power": 42.8,
+      "remaining_amount": 42.8,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-15T20:00:00.000000",
+      "remaining_power": 42.1,
+      "remaining_amount": 42.1,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-15T22:00:00.000000",
+      "remaining_power": 41.6,
+      "remaining_amount": 41.6,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-16T08:00:00.000000",
+      "remaining_power": 41.0,
+      "remaining_amount": 41.0,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-16T10:00:00.000000",
+      "remaining_power": 40.5,
+      "remaining_amount": 40.5,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-16T12:00:00.000000",
+      "remaining_power": 39.9,
+      "remaining_amount": 39.9,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-16T14:00:00.000000",
+      "remaining_power": 39.3,
+      "remaining_amount": 39.3,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-16T16:00:00.000000",
+      "remaining_power": 38.7,
+      "remaining_amount": 38.7,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-16T18:00:00.000000",
+      "remaining_power": 38.0,
+      "remaining_amount": 38.0,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-16T20:00:00.000000",
+      "remaining_power": 37.3,
+      "remaining_amount": 37.3,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-16T22:00:00.000000",
+      "remaining_power": 36.8,
+      "remaining_amount": 36.8,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-17T08:00:00.000000",
+      "remaining_power": 36.2,
+      "remaining_amount": 36.2,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-17T10:00:00.000000",
+      "remaining_power": 35.7,
+      "remaining_amount": 35.7,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-17T12:00:00.000000",
+      "remaining_power": 35.1,
+      "remaining_amount": 35.1,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-17T14:00:00.000000",
+      "remaining_power": 34.5,
+      "remaining_amount": 34.5,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-17T16:00:00.000000",
+      "remaining_power": 33.9,
+      "remaining_amount": 33.9,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-17T18:00:00.000000",
+      "remaining_power": 33.2,
+      "remaining_amount": 33.2,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-17T20:00:00.000000",
+      "remaining_power": 32.5,
+      "remaining_amount": 32.5,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-17T22:00:00.000000",
+      "remaining_power": 32.0,
+      "remaining_amount": 32.0,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-18T08:00:00.000000",
+      "remaining_power": 31.4,
+      "remaining_amount": 31.4,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-18T10:00:00.000000",
+      "remaining_power": 30.9,
+      "remaining_amount": 30.9,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-18T12:00:00.000000",
+      "remaining_power": 30.3,
+      "remaining_amount": 30.3,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-18T14:00:00.000000",
+      "remaining_power": 29.7,
+      "remaining_amount": 29.7,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-18T16:00:00.000000",
+      "remaining_power": 29.1,
+      "remaining_amount": 29.1,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-18T18:00:00.000000",
+      "remaining_power": 28.4,
+      "remaining_amount": 28.4,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-18T20:00:00.000000",
+      "remaining_power": 27.7,
+      "remaining_amount": 27.7,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-18T22:00:00.000000",
+      "remaining_power": 27.2,
+      "remaining_amount": 27.2,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-19T08:00:00.000000",
+      "remaining_power": 26.6,
+      "remaining_amount": 26.6,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-19T10:00:00.000000",
+      "remaining_power": 26.1,
+      "remaining_amount": 26.1,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-19T12:00:00.000000",
+      "remaining_power": 25.5,
+      "remaining_amount": 25.5,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-19T14:00:00.000000",
+      "remaining_power": 24.9,
+      "remaining_amount": 24.9,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-19T16:00:00.000000",
+      "remaining_power": 24.3,
+      "remaining_amount": 24.3,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-19T18:00:00.000000",
+      "remaining_power": 23.6,
+      "remaining_amount": 23.6,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-19T20:00:00.000000",
+      "remaining_power": 22.9,
+      "remaining_amount": 22.9,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-19T22:00:00.000000",
+      "remaining_power": 22.4,
+      "remaining_amount": 22.4,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-20T08:00:00.000000",
+      "remaining_power": 21.8,
+      "remaining_amount": 21.8,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-20T10:00:00.000000",
+      "remaining_power": 21.3,
+      "remaining_amount": 21.3,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-20T12:00:00.000000",
+      "remaining_power": 20.7,
+      "remaining_amount": 20.7,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-20T14:00:00.000000",
+      "remaining_power": 20.1,
+      "remaining_amount": 20.1,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-20T16:00:00.000000",
+      "remaining_power": 19.5,
+      "remaining_amount": 19.5,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-20T18:00:00.000000",
+      "remaining_power": 18.8,
+      "remaining_amount": 18.8,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-20T20:00:00.000000",
+      "remaining_power": 18.1,
+      "remaining_amount": 18.1,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-20T22:00:00.000000",
+      "remaining_power": 17.6,
+      "remaining_amount": 17.6,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-21T08:00:00.000000",
+      "remaining_power": 17.0,
+      "remaining_amount": 17.0,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-21T10:00:00.000000",
+      "remaining_power": 16.5,
+      "remaining_amount": 16.5,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-21T12:00:00.000000",
+      "remaining_power": 15.9,
+      "remaining_amount": 15.9,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-21T14:00:00.000000",
+      "remaining_power": 15.3,
+      "remaining_amount": 15.3,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-21T16:00:00.000000",
+      "remaining_power": 14.7,
+      "remaining_amount": 14.7,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-01-21T18:00:00.000000",
+      "remaining_power": 14.0,
+      "remaining_amount": 14.0,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T14:34:51.518131",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T14:34:51.680669",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T14:36:51.855362",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T14:38:52.085564",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T14:40:52.228549",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T14:48:09.387010",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T14:48:09.523363",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T14:50:09.702717",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T14:52:10.248271",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T14:54:10.769118",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T14:56:11.006865",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T14:58:11.379855",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:00:11.650202",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:02:11.822864",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:04:12.045351",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:06:12.269891",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:08:12.404525",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:10:12.567711",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:12:12.735763",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:14:12.909555",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:16:13.125249",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:18:13.211116",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:20:13.409631",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:22:13.595843",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:24:13.717479",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:26:13.959828",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:28:14.159866",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:30:14.315990",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:32:14.495119",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:34:14.661131",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:36:14.848592",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:38:15.262373",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:40:46.849399",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:43:28.144135",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:46:02.051461",
+      "remaining_power": 14.83,
+      "remaining_amount": 14.83,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T15:49:13.262202",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:02:16.051014",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:10:31.676661",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:20:17.936142",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:22:18.098153",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:24:18.239618",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:26:18.361190",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:28:18.526695",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:30:18.659686",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:32:18.777645",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:34:18.916775",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:36:19.051466",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:38:19.206115",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:40:19.380967",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:42:19.533145",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:44:19.687605",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:46:19.812029",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:48:19.955756",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:50:20.092673",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:50:35.384957+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:50:35.478201+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:52:35.582115+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:54:28.005838+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:54:28.105958+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:56:28.284936+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:56:38.065364+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:56:38.169899+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T16:58:38.321482+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:00:38.504101+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:01:25.633871+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:01:25.730711+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:03:25.902385+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:05:27.097325+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:07:27.256988+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:09:27.391351+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:11:27.573440+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:13:27.843717+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:18:23.934105+08:00",
+      "remaining_power": 14.82,
+      "remaining_amount": 14.82,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:20:24.069656+08:00",
+      "remaining_power": 14.8,
+      "remaining_amount": 14.8,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:22:24.200428+08:00",
+      "remaining_power": 14.8,
+      "remaining_amount": 14.8,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:24:24.753224+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:29:11.985216+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:29:12.070349+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:30:07.128192+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:30:07.211787+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:32:07.364686+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:34:07.527396+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:36:07.668060+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:38:07.825068+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:40:07.938081+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:42:08.096382+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:44:08.238561+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:46:08.298971+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:48:09.522792+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:50:09.651762+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:52:09.771945+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:54:09.933250+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:56:10.070374+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T17:58:10.245665+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:00:10.380641+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:02:10.492142+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:04:10.632882+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:06:10.760603+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:08:10.904904+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:10:11.024588+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:12:11.179082+08:00",
+      "remaining_power": 14.77,
+      "remaining_amount": 14.77,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:14:11.314643+08:00",
+      "remaining_power": 14.76,
+      "remaining_amount": 14.76,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:15:24.191290+08:00",
+      "remaining_power": 14.76,
+      "remaining_amount": 14.76,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:15:24.271831+08:00",
+      "remaining_power": 14.76,
+      "remaining_amount": 14.76,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:17:24.397085+08:00",
+      "remaining_power": 14.76,
+      "remaining_amount": 14.76,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:18:33.927828+08:00",
+      "remaining_power": 14.76,
+      "remaining_amount": 14.76,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:18:34.001321+08:00",
+      "remaining_power": 14.76,
+      "remaining_amount": 14.76,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:20:34.130511+08:00",
+      "remaining_power": 14.76,
+      "remaining_amount": 14.76,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:22:34.282218+08:00",
+      "remaining_power": 14.76,
+      "remaining_amount": 14.76,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:24:34.610680+08:00",
+      "remaining_power": 14.76,
+      "remaining_amount": 14.76,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:29:26.538511+08:00",
+      "remaining_power": 14.76,
+      "remaining_amount": 14.76,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:31:26.682785+08:00",
+      "remaining_power": 14.76,
+      "remaining_amount": 14.76,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:33:26.819876+08:00",
+      "remaining_power": 14.76,
+      "remaining_amount": 14.76,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:35:26.955241+08:00",
+      "remaining_power": 14.75,
+      "remaining_amount": 14.75,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:37:27.116266+08:00",
+      "remaining_power": 14.75,
+      "remaining_amount": 14.75,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:40:04.492413+08:00",
+      "remaining_power": 14.75,
+      "remaining_amount": 14.75,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:42:05.050297+08:00",
+      "remaining_power": 14.75,
+      "remaining_amount": 14.75,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:44:05.233381+08:00",
+      "remaining_power": 14.74,
+      "remaining_amount": 14.74,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:46:05.477442+08:00",
+      "remaining_power": 14.74,
+      "remaining_amount": 14.74,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:48:05.687095+08:00",
+      "remaining_power": 14.74,
+      "remaining_amount": 14.74,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:50:05.916486+08:00",
+      "remaining_power": 14.73,
+      "remaining_amount": 14.73,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:52:06.102376+08:00",
+      "remaining_power": 14.73,
+      "remaining_amount": 14.73,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:54:23.731190+08:00",
+      "remaining_power": 14.72,
+      "remaining_amount": 14.72,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T18:57:18.995541+08:00",
+      "remaining_power": 14.72,
+      "remaining_amount": 14.72,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T19:00:03.661475+08:00",
+      "remaining_power": 14.72,
+      "remaining_amount": 14.72,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T19:11:53.440108+08:00",
+      "remaining_power": 14.7,
+      "remaining_amount": 14.7,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T19:29:25.318200+08:00",
+      "remaining_power": 14.67,
+      "remaining_amount": 14.67,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T19:45:09.292891+08:00",
+      "remaining_power": 14.52,
+      "remaining_amount": 14.52,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T19:47:43.432761+08:00",
+      "remaining_power": 14.52,
+      "remaining_amount": 14.52,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T19:49:48.434568+08:00",
+      "remaining_power": 14.43,
+      "remaining_amount": 14.43,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T19:57:03.277366+08:00",
+      "remaining_power": 14.37,
+      "remaining_amount": 14.37,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T19:59:03.384280+08:00",
+      "remaining_power": 14.37,
+      "remaining_amount": 14.37,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:01:03.531025+08:00",
+      "remaining_power": 14.3,
+      "remaining_amount": 14.3,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:03:03.681576+08:00",
+      "remaining_power": 14.3,
+      "remaining_amount": 14.3,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:05:03.848759+08:00",
+      "remaining_power": 14.23,
+      "remaining_amount": 14.23,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:07:03.974011+08:00",
+      "remaining_power": 14.23,
+      "remaining_amount": 14.23,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:09:04.103834+08:00",
+      "remaining_power": 14.23,
+      "remaining_amount": 14.23,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:11:04.240990+08:00",
+      "remaining_power": 14.17,
+      "remaining_amount": 14.17,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:13:50.996858+08:00",
+      "remaining_power": 14.17,
+      "remaining_amount": 14.17,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:15:51.109565+08:00",
+      "remaining_power": 14.09,
+      "remaining_amount": 14.09,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:17:51.227818+08:00",
+      "remaining_power": 14.09,
+      "remaining_amount": 14.09,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:19:51.362185+08:00",
+      "remaining_power": 14.05,
+      "remaining_amount": 14.05,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:21:51.487103+08:00",
+      "remaining_power": 14.05,
+      "remaining_amount": 14.05,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:23:51.703926+08:00",
+      "remaining_power": 14.05,
+      "remaining_amount": 14.05,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:25:51.840854+08:00",
+      "remaining_power": 14.0,
+      "remaining_amount": 14.0,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:27:51.965610+08:00",
+      "remaining_power": 14.0,
+      "remaining_amount": 14.0,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:29:52.090876+08:00",
+      "remaining_power": 13.92,
+      "remaining_amount": 13.92,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:32:03.599420+08:00",
+      "remaining_power": 13.92,
+      "remaining_amount": 13.92,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:40:30.684365+08:00",
+      "remaining_power": 13.84,
+      "remaining_amount": 13.84,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:46:48.582893+08:00",
+      "remaining_power": 13.78,
+      "remaining_amount": 13.78,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:48:48.725020+08:00",
+      "remaining_power": 13.78,
+      "remaining_amount": 13.78,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:50:48.865252+08:00",
+      "remaining_power": 13.73,
+      "remaining_amount": 13.73,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T20:52:49.017527+08:00",
+      "remaining_power": 13.73,
+      "remaining_amount": 13.73,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T21:06:09.717378+08:00",
+      "remaining_power": 13.57,
+      "remaining_amount": 13.57,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T21:16:16.692251+08:00",
+      "remaining_power": 13.45,
+      "remaining_amount": 13.45,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T21:27:35.164672+08:00",
+      "remaining_power": 13.35,
+      "remaining_amount": 13.35,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T21:33:55.791660+08:00",
+      "remaining_power": 13.3,
+      "remaining_amount": 13.3,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T21:36:22.886425+08:00",
+      "remaining_power": 13.27,
+      "remaining_amount": 13.27,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T21:42:41.305324+08:00",
+      "remaining_power": 13.21,
+      "remaining_amount": 13.21,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T21:48:27.449916+08:00",
+      "remaining_power": 13.14,
+      "remaining_amount": 13.14,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T21:51:22.189553+08:00",
+      "remaining_power": 13.11,
+      "remaining_amount": 13.11,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T21:55:10.193949+08:00",
+      "remaining_power": 13.06,
+      "remaining_amount": 13.06,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T22:16:20.639163+08:00",
+      "remaining_power": 12.28,
+      "remaining_amount": 12.28,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T22:18:53.813457+08:00",
+      "remaining_power": 12.28,
+      "remaining_amount": 12.28,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T22:21:34.286014+08:00",
+      "remaining_power": 12.19,
+      "remaining_amount": 12.19,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T22:23:49.462574+08:00",
+      "remaining_power": 12.19,
+      "remaining_amount": 12.19,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T22:26:00.162929+08:00",
+      "remaining_power": 12.1,
+      "remaining_amount": 12.1,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T22:40:40.280764+08:00",
+      "remaining_power": 11.99,
+      "remaining_amount": 11.99,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T22:54:25.301367+08:00",
+      "remaining_power": 11.93,
+      "remaining_amount": 11.93,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T23:00:29.467633+08:00",
+      "remaining_power": 11.86,
+      "remaining_amount": 11.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T23:33:41.620430+08:00",
+      "remaining_power": 11.65,
+      "remaining_amount": 11.65,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-17T23:36:23.160332+08:00",
+      "remaining_power": 11.62,
+      "remaining_amount": 11.62,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T00:01:01.702195+08:00",
+      "remaining_power": 11.45,
+      "remaining_amount": 11.45,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T00:17:10.066279+08:00",
+      "remaining_power": 11.38,
+      "remaining_amount": 11.38,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T00:43:47.422116+08:00",
+      "remaining_power": 11.19,
+      "remaining_amount": 11.19,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T01:08:24.919078+08:00",
+      "remaining_power": 11.04,
+      "remaining_amount": 11.04,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T01:35:05.760585+08:00",
+      "remaining_power": 10.9,
+      "remaining_amount": 10.9,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T02:09:15.164196+08:00",
+      "remaining_power": 10.71,
+      "remaining_amount": 10.71,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T02:39:22.757590+08:00",
+      "remaining_power": 10.56,
+      "remaining_amount": 10.56,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T03:08:23.033328+08:00",
+      "remaining_power": 10.42,
+      "remaining_amount": 10.42,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T03:13:27.762864+08:00",
+      "remaining_power": 10.42,
+      "remaining_amount": 10.42,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T03:47:23.244692+08:00",
+      "remaining_power": 10.22,
+      "remaining_amount": 10.22,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T04:05:47.925872+08:00",
+      "remaining_power": 10.14,
+      "remaining_amount": 10.14,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T04:16:13.233164+08:00",
+      "remaining_power": 10.11,
+      "remaining_amount": 10.11,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T04:18:24.692373+08:00",
+      "remaining_power": 10.07,
+      "remaining_amount": 10.07,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T04:46:42.359195+08:00",
+      "remaining_power": 10.02,
+      "remaining_amount": 10.02,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T05:21:12.612107+08:00",
+      "remaining_power": 10.0,
+      "remaining_amount": 10.0,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T05:35:04.044876+08:00",
+      "remaining_power": 9.99,
+      "remaining_amount": 9.99,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T05:47:58.812831+08:00",
+      "remaining_power": 9.98,
+      "remaining_amount": 9.98,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T06:11:55.045056+08:00",
+      "remaining_power": 9.97,
+      "remaining_amount": 9.97,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T06:34:07.918926+08:00",
+      "remaining_power": 9.95,
+      "remaining_amount": 9.95,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T06:45:56.533541+08:00",
+      "remaining_power": 9.94,
+      "remaining_amount": 9.94,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T07:08:50.180596+08:00",
+      "remaining_power": 9.92,
+      "remaining_amount": 9.92,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T07:13:07.163950+08:00",
+      "remaining_power": 9.92,
+      "remaining_amount": 9.92,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T07:23:10.255462+08:00",
+      "remaining_power": 9.92,
+      "remaining_amount": 9.92,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T07:27:11.435532+08:00",
+      "remaining_power": 9.91,
+      "remaining_amount": 9.91,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T07:39:51.958003+08:00",
+      "remaining_power": 9.91,
+      "remaining_amount": 9.91,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:33:04.608773+08:00",
+      "remaining_power": 9.87,
+      "remaining_amount": 9.87,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:35:04.780300+08:00",
+      "remaining_power": 9.87,
+      "remaining_amount": 9.87,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:37:04.910352+08:00",
+      "remaining_power": 9.87,
+      "remaining_amount": 9.87,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:39:05.058655+08:00",
+      "remaining_power": 9.87,
+      "remaining_amount": 9.87,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:41:05.218514+08:00",
+      "remaining_power": 9.87,
+      "remaining_amount": 9.87,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:43:05.353129+08:00",
+      "remaining_power": 9.87,
+      "remaining_amount": 9.87,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:45:05.596235+08:00",
+      "remaining_power": 9.87,
+      "remaining_amount": 9.87,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:47:05.787043+08:00",
+      "remaining_power": 9.87,
+      "remaining_amount": 9.87,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:49:05.928235+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:51:06.063306+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:53:06.198008+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:55:06.336138+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:57:06.541019+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T08:59:06.687130+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:01:06.808305+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:03:06.948197+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:05:07.080216+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:07:07.204558+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:09:07.352882+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:11:07.500948+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:13:07.658281+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:15:07.777976+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:17:07.946195+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:19:08.093827+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:21:08.247832+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:23:08.415799+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:25:08.564167+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:27:08.810266+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:29:08.951619+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:31:09.087176+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:39:09.538184+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:41:09.696519+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:43:09.865515+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:45:10.072503+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    },
+    {
+      "timestamp": "2025-09-18T09:47:10.247748+08:00",
+      "remaining_power": 9.86,
+      "remaining_amount": 9.86,
+      "unit_price": 1.0
+    }
+  ],
+  "ten_minute_usage": {
+    "2025-09-17 14:40": {
+      "usage": 0,
+      "count": 2,
+      "avg_power": 14.83
+    },
+    "2025-09-17 14:50": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 14.83
+    },
+    "2025-09-17 15:00": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 14.83
+    },
+    "2025-09-17 15:10": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 14.83
+    },
+    "2025-09-17 15:20": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 14.83
+    },
+    "2025-09-17 15:30": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 14.83
+    },
+    "2025-09-17 15:40": {
+      "usage": 0.009999999999999787,
+      "count": 4,
+      "avg_power": 14.82
+    },
+    "2025-09-17 16:00": {
+      "usage": 0,
+      "count": 1,
+      "avg_power": 14.82
+    },
+    "2025-09-17 16:10": {
+      "usage": 0,
+      "count": 1,
+      "avg_power": 14.82
+    },
+    "2025-09-17 16:20": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 14.82
+    },
+    "2025-09-17 16:30": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 14.82
+    },
+    "2025-09-17 16:40": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 14.82
+    },
+    "2025-09-17 16:50": {
+      "usage": 0,
+      "count": 10,
+      "avg_power": 14.82
+    },
+    "2025-09-17 17:00": {
+      "usage": 0,
+      "count": 7,
+      "avg_power": 14.82
+    },
+    "2025-09-17 17:10": {
+      "usage": 0,
+      "count": 3,
+      "avg_power": 14.82
+    },
+    "2025-09-17 17:20": {
+      "usage": 0.05000000000000071,
+      "count": 5,
+      "avg_power": 14.77
+    },
+    "2025-09-17 17:30": {
+      "usage": 0,
+      "count": 6,
+      "avg_power": 14.77
+    },
+    "2025-09-17 17:40": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 14.77
+    },
+    "2025-09-17 17:50": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 14.77
+    },
+    "2025-09-17 18:00": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 14.77
+    },
+    "2025-09-17 18:10": {
+      "usage": 0.009999999999999787,
+      "count": 8,
+      "avg_power": 14.76
+    },
+    "2025-09-17 18:20": {
+      "usage": 0,
+      "count": 4,
+      "avg_power": 14.76
+    },
+    "2025-09-17 18:30": {
+      "usage": 0.009999999999999787,
+      "count": 4,
+      "avg_power": 14.75
+    },
+    "2025-09-17 18:40": {
+      "usage": 0.009999999999999787,
+      "count": 5,
+      "avg_power": 14.74
+    },
+    "2025-09-17 18:50": {
+      "usage": 0.019999999999999574,
+      "count": 4,
+      "avg_power": 14.72
+    },
+    "2025-09-17 19:00": {
+      "usage": 0,
+      "count": 1,
+      "avg_power": 14.72
+    },
+    "2025-09-17 19:10": {
+      "usage": 0.02000000000000135,
+      "count": 1,
+      "avg_power": 14.7
+    },
+    "2025-09-17 19:20": {
+      "usage": 0.02999999999999936,
+      "count": 1,
+      "avg_power": 14.67
+    },
+    "2025-09-17 19:40": {
+      "usage": 0.2400000000000002,
+      "count": 3,
+      "avg_power": 14.43
+    },
+    "2025-09-17 19:50": {
+      "usage": 0.0600000000000005,
+      "count": 2,
+      "avg_power": 14.37
+    },
+    "2025-09-17 20:00": {
+      "usage": 0.1399999999999988,
+      "count": 5,
+      "avg_power": 14.23
+    },
+    "2025-09-17 20:10": {
+      "usage": 0.17999999999999972,
+      "count": 5,
+      "avg_power": 14.05
+    },
+    "2025-09-17 20:20": {
+      "usage": 0.13000000000000078,
+      "count": 5,
+      "avg_power": 13.92
+    },
+    "2025-09-17 20:30": {
+      "usage": 0,
+      "count": 1,
+      "avg_power": 13.92
+    },
+    "2025-09-17 20:40": {
+      "usage": 0.14000000000000057,
+      "count": 3,
+      "avg_power": 13.78
+    },
+    "2025-09-17 20:50": {
+      "usage": 0.049999999999998934,
+      "count": 2,
+      "avg_power": 13.73
+    },
+    "2025-09-17 21:00": {
+      "usage": 0.16000000000000014,
+      "count": 1,
+      "avg_power": 13.57
+    },
+    "2025-09-17 21:10": {
+      "usage": 0.120000000000001,
+      "count": 1,
+      "avg_power": 13.45
+    },
+    "2025-09-17 21:20": {
+      "usage": 0.09999999999999964,
+      "count": 1,
+      "avg_power": 13.35
+    },
+    "2025-09-17 21:30": {
+      "usage": 0.08000000000000007,
+      "count": 2,
+      "avg_power": 13.27
+    },
+    "2025-09-17 21:40": {
+      "usage": 0.129999999999999,
+      "count": 2,
+      "avg_power": 13.14
+    },
+    "2025-09-17 21:50": {
+      "usage": 0.08000000000000007,
+      "count": 2,
+      "avg_power": 13.06
+    },
+    "2025-09-17 22:10": {
+      "usage": 0.7800000000000011,
+      "count": 2,
+      "avg_power": 12.28
+    },
+    "2025-09-17 22:20": {
+      "usage": 0.17999999999999972,
+      "count": 3,
+      "avg_power": 12.1
+    },
+    "2025-09-17 22:40": {
+      "usage": 0.10999999999999943,
+      "count": 1,
+      "avg_power": 11.99
+    },
+    "2025-09-17 22:50": {
+      "usage": 0.0600000000000005,
+      "count": 1,
+      "avg_power": 11.93
+    },
+    "2025-09-17 23:00": {
+      "usage": 0.07000000000000028,
+      "count": 1,
+      "avg_power": 11.86
+    },
+    "2025-09-17 23:30": {
+      "usage": 0.2400000000000002,
+      "count": 2,
+      "avg_power": 11.62
+    },
+    "2025-09-18 00:00": {
+      "usage": 0.16999999999999993,
+      "count": 1,
+      "avg_power": 11.45
+    },
+    "2025-09-18 00:10": {
+      "usage": 0.06999999999999851,
+      "count": 1,
+      "avg_power": 11.38
+    },
+    "2025-09-18 00:40": {
+      "usage": 0.19000000000000128,
+      "count": 1,
+      "avg_power": 11.19
+    },
+    "2025-09-18 01:00": {
+      "usage": 0.15000000000000036,
+      "count": 1,
+      "avg_power": 11.04
+    },
+    "2025-09-18 01:30": {
+      "usage": 0.1399999999999988,
+      "count": 1,
+      "avg_power": 10.9
+    },
+    "2025-09-18 02:00": {
+      "usage": 0.1899999999999995,
+      "count": 1,
+      "avg_power": 10.71
+    },
+    "2025-09-18 02:30": {
+      "usage": 0.15000000000000036,
+      "count": 1,
+      "avg_power": 10.56
+    },
+    "2025-09-18 03:00": {
+      "usage": 0.14000000000000057,
+      "count": 1,
+      "avg_power": 10.42
+    },
+    "2025-09-18 03:10": {
+      "usage": 0,
+      "count": 1,
+      "avg_power": 10.42
+    },
+    "2025-09-18 03:40": {
+      "usage": 0.1999999999999993,
+      "count": 1,
+      "avg_power": 10.22
+    },
+    "2025-09-18 04:00": {
+      "usage": 0.08000000000000007,
+      "count": 1,
+      "avg_power": 10.14
+    },
+    "2025-09-18 04:10": {
+      "usage": 0.07000000000000028,
+      "count": 2,
+      "avg_power": 10.07
+    },
+    "2025-09-18 04:40": {
+      "usage": 0.05000000000000071,
+      "count": 1,
+      "avg_power": 10.02
+    },
+    "2025-09-18 05:20": {
+      "usage": 0.019999999999999574,
+      "count": 1,
+      "avg_power": 10.0
+    },
+    "2025-09-18 05:30": {
+      "usage": 0.009999999999999787,
+      "count": 1,
+      "avg_power": 9.99
+    },
+    "2025-09-18 05:40": {
+      "usage": 0.009999999999999787,
+      "count": 1,
+      "avg_power": 9.98
+    },
+    "2025-09-18 06:10": {
+      "usage": 0.009999999999999787,
+      "count": 1,
+      "avg_power": 9.97
+    },
+    "2025-09-18 06:30": {
+      "usage": 0.02000000000000135,
+      "count": 1,
+      "avg_power": 9.95
+    },
+    "2025-09-18 06:40": {
+      "usage": 0.009999999999999787,
+      "count": 1,
+      "avg_power": 9.94
+    },
+    "2025-09-18 07:00": {
+      "usage": 0.019999999999999574,
+      "count": 1,
+      "avg_power": 9.92
+    },
+    "2025-09-18 07:10": {
+      "usage": 0,
+      "count": 1,
+      "avg_power": 9.92
+    },
+    "2025-09-18 07:20": {
+      "usage": 0.009999999999999787,
+      "count": 2,
+      "avg_power": 9.91
+    },
+    "2025-09-18 07:30": {
+      "usage": 0,
+      "count": 1,
+      "avg_power": 9.91
+    },
+    "2025-09-18 08:30": {
+      "usage": 0.040000000000000924,
+      "count": 4,
+      "avg_power": 9.87
+    },
+    "2025-09-18 08:40": {
+      "usage": 0.009999999999999787,
+      "count": 5,
+      "avg_power": 9.86
+    },
+    "2025-09-18 08:50": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 9.86
+    },
+    "2025-09-18 09:00": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 9.86
+    },
+    "2025-09-18 09:10": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 9.86
+    },
+    "2025-09-18 09:20": {
+      "usage": 0,
+      "count": 5,
+      "avg_power": 9.86
+    },
+    "2025-09-18 09:30": {
+      "usage": 0,
+      "count": 2,
+      "avg_power": 9.86
+    },
+    "2025-09-18 09:40": {
+      "usage": 0,
+      "count": 4,
+      "avg_power": 9.86
+    }
+  },
+  "hourly_usage_data": {
+    "2025-09-17-14": 0,
+    "2025-09-17-15": {
+      "usage": 0.009999999999999787,
+      "count": 24,
+      "avg_power": 14.82
+    },
+    "2025-09-17-16": {
+      "usage": 0,
+      "count": 27,
+      "avg_power": 14.82
+    },
+    "2025-09-17-17": {
+      "usage": 0.05000000000000071,
+      "count": 31,
+      "avg_power": 14.77
+    },
+    "2025-09-17-18": {
+      "usage": 0.049999999999998934,
+      "count": 30,
+      "avg_power": 14.72
+    },
+    "2025-09-17-19": {
+      "usage": 0.3500000000000014,
+      "count": 8,
+      "avg_power": 14.37
+    },
+    "2025-09-17-20": {
+      "usage": 0.6399999999999988,
+      "count": 21,
+      "avg_power": 13.73
+    },
+    "2025-09-17-21": {
+      "usage": 0.6699999999999999,
+      "count": 9,
+      "avg_power": 13.06
+    },
+    "2025-09-17-22": {
+      "usage": 1.1300000000000008,
+      "count": 7,
+      "avg_power": 11.93
+    },
+    "2025-09-17-23": {
+      "usage": 0.3100000000000005,
+      "count": 3,
+      "avg_power": 11.62
+    },
+    "2025-09-18-00": {
+      "usage": 0.4299999999999997,
+      "count": 3,
+      "avg_power": 11.19
+    },
+    "2025-09-18-01": {
+      "usage": 0.28999999999999915,
+      "count": 2,
+      "avg_power": 10.9
+    },
+    "2025-09-18-02": {
+      "usage": 0.33999999999999986,
+      "count": 2,
+      "avg_power": 10.56
+    },
+    "2025-09-18-03": {
+      "usage": 0.33999999999999986,
+      "count": 3,
+      "avg_power": 10.22
+    },
+    "2025-09-18-04": {
+      "usage": 0.20000000000000107,
+      "count": 4,
+      "avg_power": 10.02
+    },
+    "2025-09-18-05": {
+      "usage": 0.03999999999999915,
+      "count": 3,
+      "avg_power": 9.98
+    },
+    "2025-09-18-06": {
+      "usage": 0.040000000000000924,
+      "count": 3,
+      "avg_power": 9.94
+    },
+    "2025-09-18-07": {
+      "usage": 0.02999999999999936,
+      "count": 5,
+      "avg_power": 9.91
+    },
+    "2025-09-18-08": {
+      "usage": 0.05000000000000071,
+      "count": 14,
+      "avg_power": 9.86
+    },
+    "2025-09-18-09": {
+      "usage": 0,
+      "count": 21,
+      "avg_power": 9.86
+    }
+  },
+  "daily_usage_data": {
+    "2025-01-15": {
+      "usage": 12.5,
+      "timestamp": "2025-01-15T23:59:59.000000"
+    },
+    "2025-01-16": {
+      "usage": 11.8,
+      "timestamp": "2025-01-16T23:59:59.000000"
+    },
+    "2025-01-17": {
+      "usage": 13.2,
+      "timestamp": "2025-01-17T23:59:59.000000"
+    },
+    "2025-01-18": {
+      "usage": 12.9,
+      "timestamp": "2025-01-18T23:59:59.000000"
+    },
+    "2025-01-19": {
+      "usage": 11.5,
+      "timestamp": "2025-01-19T23:59:59.000000"
+    },
+    "2025-01-20": {
+      "usage": 12.7,
+      "timestamp": "2025-01-20T23:59:59.000000"
+    },
+    "2025-01-21": {
+      "usage": 8.4,
+      "timestamp": "2025-01-21T18:00:00.000000"
+    },
+    "2025-09-17": {
+      "usage": 3.210000000000001,
+      "count": 160,
+      "avg_power": 11.62,
+      "peak_power": 14.83
+    },
+    "2025-09-18": {
+      "usage": 1.7599999999999998,
+      "count": 60,
+      "avg_power": 9.86,
+      "peak_power": 11.45
+    }
+  },
+  "weekly_usage_data": {
+    "2025-W03": {
+      "usage": 82.5,
+      "timestamp": "2025-01-21T18:00:00.000000"
+    },
+    "2025-W37": {
+      "usage": 4.970000000000001,
+      "count": 220,
+      "avg_power": 9.86
+    }
+  },
+  "monthly_usage_data": {
+    "2025-01": {
+      "usage": 82.5,
+      "timestamp": "2025-01-21T18:00:00.000000"
+    },
+    "2025-09": {
+      "usage": 4.970000000000001,
+      "count": 220,
+      "avg_power": 9.86
+    }
+  }
+}

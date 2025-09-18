@@ -15,6 +15,7 @@ from datetime import datetime, timedelta
 import pytz
 from scraper import MeterDataScraper
 from collections import defaultdict
+from database import db_manager, is_database_available
 
 # 设置北京时区
 BEIJING_TZ = pytz.timezone('Asia/Shanghai')
@@ -264,7 +265,25 @@ def load_historical_data():
     weekly_usage_data = {}
     monthly_usage_data = {}
     
-    # 加载实时监控数据
+    # 优先从云数据库加载数据
+    if is_database_available():
+        try:
+            # 从云数据库加载历史数据
+            historical_data = db_manager.get_historical_data()
+            
+            # 从云数据库加载用电统计数据
+            ten_minute_usage = db_manager.get_usage_stats('ten_minute')
+            hourly_usage_data = db_manager.get_usage_stats('hourly')
+            daily_usage_data = db_manager.get_usage_stats('daily')
+            weekly_usage_data = db_manager.get_usage_stats('weekly')
+            monthly_usage_data = db_manager.get_usage_stats('monthly')
+            
+            print(f"✅ 已从云数据库加载监控数据: {len(historical_data)} 条历史记录")
+            return
+        except Exception as e:
+            print(f"从云数据库加载数据失败: {e}，尝试本地文件")
+    
+    # 备用方案：从本地文件加载数据
     if os.path.exists(DATA_HISTORY_FILE):
         try:
             with open(DATA_HISTORY_FILE, 'r', encoding='utf-8') as f:
@@ -276,12 +295,28 @@ def load_historical_data():
                 weekly_usage_data = history.get('weekly_usage_data', {})
                 monthly_usage_data = history.get('monthly_usage_data', {})
                 
-                print(f"✅ 已加载监控数据: {len(historical_data)} 条历史记录")
+                print(f"✅ 已从本地文件加载监控数据: {len(historical_data)} 条历史记录")
         except Exception as e:
-            print(f"加载监控数据失败: {e}")
+            print(f"加载本地监控数据失败: {e}")
 
 def save_historical_data():
     """保存历史数据"""
+    # 优先保存到云数据库
+    if is_database_available():
+        try:
+            # 保存用电统计数据到云数据库
+            db_manager.save_usage_stats('ten_minute', 'data', ten_minute_usage)
+            db_manager.save_usage_stats('hourly', 'data', hourly_usage_data)
+            db_manager.save_usage_stats('daily', 'data', daily_usage_data)
+            db_manager.save_usage_stats('weekly', 'data', weekly_usage_data)
+            db_manager.save_usage_stats('monthly', 'data', monthly_usage_data)
+            
+            print("✅ 数据已保存到云数据库")
+            return
+        except Exception as e:
+            print(f"保存到云数据库失败: {e}，尝试本地文件")
+    
+    # 备用方案：保存到本地文件
     try:
         history = {
             'historical_data': historical_data,
@@ -293,6 +328,7 @@ def save_historical_data():
         }
         with open(DATA_HISTORY_FILE, 'w', encoding='utf-8') as f:
             json.dump(history, f, ensure_ascii=False, indent=2)
+        print("✅ 数据已保存到本地文件")
     except Exception as e:
         print(f"保存历史数据失败: {e}")
 
